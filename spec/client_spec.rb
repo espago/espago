@@ -2,11 +2,12 @@ require 'spec_helper'
 require 'espago/client'
 
 describe Espago::Client do
-  subject { Espago::Client.new(pub_key: 'public_key') }
+  subject { Espago::Client.new(pub_key: 'public_key', app_id: 'App12345') }
 
   context "#initialize" do
     context "with valid params" do
       its(:public_key) { should_not be_empty }
+      its(:app_id) { should_not be_empty }
     end
 
     context "with invalid params" do
