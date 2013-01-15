@@ -1,5 +1,3 @@
-require "espago/api_request"
-
 module Espago
   class Client
     attr_reader :public_key, :app_id
@@ -8,7 +6,7 @@ module Espago
     def initialize(options = {})
       @public_key = options[:pub_key] || Options.public_key
       @app_id = options[:app_id] || Options.app_id
-      @request = options[:request] || Espago::ApiRequest.new
+      @request = options[:request] || ApiRequest.new
       validate!
     end
 
