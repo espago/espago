@@ -6,7 +6,12 @@ module Espago
     def initialize(options = {})
       @public_key = options[:pub_key] || Options.public_key
       @app_id = options[:app_id] || Options.app_id
+      @request = ApiRequest.new
       validate!
+    end
+
+    def send_request(method, params)
+      @request.create_request(method, params)
     end
 
     private
