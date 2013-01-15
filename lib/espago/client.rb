@@ -8,6 +8,7 @@ module Espago
       validate!
     end
 
+    private
     def validate!
       raise NoApiKey unless @public_key
     end
