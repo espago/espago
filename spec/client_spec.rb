@@ -1,16 +1,9 @@
 require 'spec_helper'
 require 'espago/client'
 
-class StubbedApiRequest
-  def create(method, params)
-    'returned api data'
-  end
-end
-
-
 describe Espago::Client do
   subject { Espago::Client.new(pub_key: 'public_key', app_id: 'App12345', request: stubbed_api_request) }
-  let(:stubbed_api_request) { StubbedApiRequest.new }
+  let(:stubbed_api_request) { Object.new }
 
   context "#initialize" do
     context "with valid params" do
@@ -29,6 +22,7 @@ describe Espago::Client do
       let(:params) { { name: "Jan Kowalski"} }
 
       it "should create an api request" do
+        stubbed_api_request.stub(:create).with(method, params) { 'returned api data' }
         subject.send_request(method, params).should eq('returned api data')
       end
     end
