@@ -17,14 +17,14 @@ describe Espago::Client do
       end
     end
 
-    context "#send_request" do
-      let(:method) { :new_client }
-      let(:params) { { name: "Jan Kowalski"} }
+  context "#send_request" do
+    let(:method) { :new_client }
+    let(:params) { { name: "Jan Kowalski"} }
 
-      it "should create an api request" do
-        stubbed_api_request.stub(:create).with(method, params) { 'returned api data' }
-        subject.send_request(method, params).should eq('returned api data')
-      end
+    it "should create an api request" do
+      stubbed_api_request.stub(:create).with(method, params) { 'returned api data' }
+      subject.send_request(method, params).should eq('returned api data')
     end
+  end
   end
 end
