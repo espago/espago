@@ -1,3 +1,5 @@
+require "pry"
+
 module Espago
   class Client
     attr_reader :public_key, :app_id
@@ -16,7 +18,7 @@ module Espago
 
     private
     def validate!
-      raise NoApiKey unless @public_key || @app_id
+      raise NoApiKey unless @public_key && @app_id
     end
   end
 end
