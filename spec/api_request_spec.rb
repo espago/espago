@@ -14,7 +14,7 @@ end
 describe Espago::ApiRequest do
 
   context "#create" do
-    it "should return reponse body" do
+    it "should return response body" do
       subject.create(:path, :stubbed).should eq('returned api data')
     end
 

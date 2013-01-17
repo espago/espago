@@ -18,7 +18,7 @@ module Espago
 
     def initialize
       @connection = Faraday.new("https://edge.espago.com/api") do |conn|
-        conn.basic_auth('908112077', 'TaJnEhAsLo123')
+        conn.basic_auth('user', 'password')
       end
     end
 
@@ -43,5 +43,3 @@ module Espago
 
   end
 end
-
-# Espago::ApiRequest.new.create(:clients, :get )
