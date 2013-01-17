@@ -1,5 +1,6 @@
 require "spec_helper"
 require "espago/api_request"
+require "json"
 
 class StubbedResponse < Struct.new(:body); end
 
@@ -7,15 +8,15 @@ class Espago::ApiRequest::StubbedPath
   def initialize(connection); end
 
   def request(params = {})
-    StubbedResponse.new('returned api data')
+    StubbedResponse.new("{\"data\":\"returned api data\"}")
   end
 end
 
 describe Espago::ApiRequest do
 
   context "#create" do
-    it "should return response body" do
-      subject.create(:path, :stubbed).should eq('returned api data')
+    it "should return response body in json format" do
+      subject.create(:path, :stubbed).should eq(JSON.parse("{\"data\":\"returned api data\"}"))
     end
 
     it "should raise an error if path not found" do
