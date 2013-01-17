@@ -10,8 +10,8 @@ module Espago
       validate!
     end
 
-    def send_request(method, params)
-      @request.create(method, params)
+    def send_request(path, method, params)
+      @request.create(path, method, params)
     end
 
     private
