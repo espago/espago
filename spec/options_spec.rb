@@ -13,12 +13,10 @@ describe Espago::Options do
     first_config.object_id.should == second_config.object_id
   end
 
-  it "should modify options" do
-    Espago::Options.config do |config|
-
-      expect {config.public_key = '123'}.to change{config.public_key}.to('123')
-      expect {config.app_id = '1234'}.to change{config.app_id}.to('1234')
+  context "#config" do
+    it "should set values" do
+      Espago::Options.config {|c| c.public_key = '123'}
+      Espago::Options.public_key.should == '123'
     end
   end
-
 end
