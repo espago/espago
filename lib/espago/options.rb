@@ -5,11 +5,11 @@ module Espago
     include Singleton
 
     class << self
-      attr_accessor :public_key, :app_id
+      attr_accessor :public_key, :app_id
 
-      def config
-        yield self if block_given?
-      end
+      def config
+        yield self if block_given?
+      end
     end
-  end
+  end
 end
