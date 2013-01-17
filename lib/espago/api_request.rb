@@ -4,7 +4,6 @@ require "active_support/inflector"
 module Espago
   class ApiRequest
     NoPathError = Class.new(StandardError)
-    attr_reader :cone
 
     #factory pattern
     class GetClients
