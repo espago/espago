@@ -1,21 +1,16 @@
 require 'spec_helper'
 require 'espago/client'
 
+class StubbedApiConnection
+  def authenticate(app_id, app_password); end
+  def create(path, method, params= {})
+    'returned api data'
+  end
+end
+
 describe Espago::Client do
-  subject { Espago::Client.new(public_key: 'public_key', app_id: 'App12345', app_password: 'secret', request: stubbed_api_request) }
-  let(:stubbed_api_request) { Object.new }
-
-  context "#initialize" do
-    context "with valid params" do
-      its(:public_key) { should_not be_empty }
-      its(:app_id) { should_not be_empty }
-    end
-
-    context "with invalid params" do
-      it "should raise an error if public_key empty" do
-        expect { Espago::Client.new }.to raise_error
-      end
-    end
+  subject { Espago::Client.new(public_key: 'public_key', app_id: 'App12345', app_password: 'secret', connection: stubbed_api_connection) }
+  let(:stubbed_api_connection) { StubbedApiConnection.new }
 
   context "#send_request" do
     let(:method) { :get }
@@ -23,9 +18,14 @@ describe Espago::Client do
     let(:params) { { name: "Jan Kowalski"} }
 
     it "should create an api request" do
-      stubbed_api_request.stub(:create).with(path, method, params) { 'returned api data' }
       subject.send_request(path, method, params).should eq('returned api data')
     end
-  end
+
+    context "with no credentials" do
+      subject { Espago::Client.new }
+      it "should raise error" do
+        expect { subject.send_request(path, method, params)}.to raise_error(Espago::Client::NotAuthenticated)
+      end
+    end
   end
 end

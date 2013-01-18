@@ -1,10 +1,15 @@
 require "faraday"
 require "active_support/inflector"
 require "json"
+require "forwardable"
 
 module Espago
-  class ApiRequest
+  class ApiConnection
     NoPathError = Class.new(StandardError)
+
+    extend Forwardable
+
+    def_delegator :@connection, :basic_auth, :authenticate
 
     #factory pattern
     class GetClients
@@ -19,7 +24,6 @@ module Espago
 
     def initialize
       @connection = Faraday.new("https://edge.espago.com/api")
-      @connection.basic_auth('908112077', '12PrOsTe34')
     end
 
     def create(path, method, params = {} )
