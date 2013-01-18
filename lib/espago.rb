@@ -1,7 +1,18 @@
 require "espago/version"
-require "espago/options"
-require "espago/api_request"
+require "espago/client"
+require 'forwardable'
 
 module Espago
-  # Your code goes here...
+
+  class << self
+    extend Forwardable
+
+    def_delegators :default_client, :public_key, :app_id, :app_password, :send_request
+    def_delegators :default_client, :public_key= , :app_id= , :app_password=
+
+    private
+    def default_client
+      @default_client ||= Espago::Client.new
+    end
+  end
 end

@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'espago/client'
 
 describe Espago::Client do
-  subject { Espago::Client.new(pub_key: 'public_key', app_id: 'App12345', request: stubbed_api_request) }
+  subject { Espago::Client.new(public_key: 'public_key', app_id: 'App12345', app_password: 'secret', request: stubbed_api_request) }
   let(:stubbed_api_request) { Object.new }
 
   context "#initialize" do
