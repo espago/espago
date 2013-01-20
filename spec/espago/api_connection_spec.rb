@@ -18,9 +18,5 @@ describe Espago::ApiConnection do
     it "should return response body in json format" do
       subject.create(:path, :stubbed).should eq(JSON.parse("{\"data\":\"returned api data\"}"))
     end
-
-    it "should raise an error if path not found" do
-      expect { subject.create(:fake, :class) }.to raise_error(Espago::ApiConnection::NoPathError)
-    end
   end
 end

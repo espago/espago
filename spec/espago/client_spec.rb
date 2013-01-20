@@ -9,7 +9,7 @@ class StubbedApiConnection
 end
 
 describe Espago::Client do
-  subject { Espago::Client.new(public_key: 'public_key', app_id: 'App12345', app_password: 'secret', connection: stubbed_api_connection) }
+  subject { Espago::Client.new( app_id: 'App12345', app_password: 'secret', connection: stubbed_api_connection) }
   let(:stubbed_api_connection) { StubbedApiConnection.new }
 
   context "#send_request" do
@@ -23,6 +23,7 @@ describe Espago::Client do
 
     context "with no credentials" do
       subject { Espago::Client.new }
+
       it "should raise error" do
         expect { subject.send_request(path, method, params)}.to raise_error(Espago::Client::NotAuthenticated)
       end
