@@ -2,6 +2,7 @@ require "faraday"
 require "active_support/inflector"
 require "json"
 require "forwardable"
+require "espago/api_connection/get_clients"
 
 module Espago
   class ApiConnection
@@ -12,16 +13,6 @@ module Espago
     def_delegator :@connection, :basic_auth, :authenticate
 
     #factory pattern
-    class GetClients
-      def initialize(connection)
-        @connection = connection
-      end
-
-      def request(params = {})
-        @connection.get('clients')
-      end
-    end
-
     def initialize
       @connection = Faraday.new("https://edge.espago.com/api")
     end
