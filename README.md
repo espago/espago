@@ -2,9 +2,11 @@ Espago gem
 [![Build Status](https://travis-ci.org/pkurek/espago.png?branch=master)](https://travis-ci.org/pkurek/espago)
 ======
 
-### Instantiating a Espago client
+### Installing Espago gem
 
-gem install 'espago'
+    gem install espago
+
+or just add it to your Gemfile if you are running a Rails project
 
 ## Configuration
 
