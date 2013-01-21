@@ -4,6 +4,7 @@ require "forwardable"
 require "espago/router"
 require "espago/api_connection/get_clients"
 require "espago/api_connection/post_clients"
+require "espago/api_connection/delete_clients"
 
 module Espago
   class ApiConnection
