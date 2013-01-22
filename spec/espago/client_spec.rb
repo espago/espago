@@ -12,6 +12,10 @@ describe Espago::Client do
   subject { Espago::Client.new( app_id: 'App12345', app_password: 'secret', connection: stubbed_api_connection) }
   let(:stubbed_api_connection) { StubbedApiConnection.new }
 
+  it { subject.should respond_to :app_id }
+  it { subject.should respond_to :app_password }
+  it { subject.should respond_to :public_key }
+
   context "#send_request" do
     let(:method) { :get }
     let(:path) { :new_client }

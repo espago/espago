@@ -17,8 +17,8 @@ module Espago
     end
 
     def create(path, method, params = {} )
-      router = @router.path_to(path, method)
-      response = router.new(@connection).request(params)
+      route = @router.new(path, method).route
+      response = route.new(@connection).request(params)
       parse response.body
     end
 
