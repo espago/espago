@@ -11,9 +11,15 @@ module Espago
     end
 
     def route
+      raise NoPathError unless path_exists?
       get_route
+    end
+
+    def path_exists?
+      get_route
+      true
     rescue
-      raise NoPathError
+      false
     end
 
     private
