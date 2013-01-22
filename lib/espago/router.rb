@@ -11,12 +11,16 @@ module Espago
     end
 
     def route
-      Espago::ApiConnection.const_get get_class_name
+      get_route
     rescue
       raise NoPathError
     end
 
     private
+    def get_route
+      Espago::ApiConnection.const_get get_class_name
+    end
+
     def get_class_name
       method.to_s.camelize + path.to_s.camelize
     end
