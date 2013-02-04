@@ -1,4 +1,3 @@
-require "active_support/inflector"
 require "espago/api_connection"
 
 module Espago
@@ -28,7 +27,7 @@ module Espago
     end
 
     def get_class_name
-      method.to_s.camelize + path.to_s.camelize
+      method.to_s.capitalize + path.to_s.capitalize
     end
   end
 end
