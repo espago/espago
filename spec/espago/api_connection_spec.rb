@@ -13,6 +13,7 @@ class Espago::ApiConnection::StubbedPath
 end
 
 describe Espago::ApiConnection do
+  subject { Espago::ApiConnection.new("http://some.api.example.com") }
 
   context "#create" do
     it "should return response body in json format" do

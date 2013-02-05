@@ -11,8 +11,8 @@ module Espago
     extend Forwardable
     def_delegator :@connection, :basic_auth, :authenticate
 
-    def initialize
-      @connection = Faraday.new("https://edge.espago.com/api")
+    def initialize(enviroment)
+      @connection = Faraday.new(enviroment)
       @router = Router
     end
 

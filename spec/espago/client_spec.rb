@@ -2,6 +2,7 @@ require 'spec_helper'
 require 'espago/client'
 
 class StubbedApiConnection
+  def initialize(enviroment); end
   def authenticate(app_id, app_password); end
   def create(path, method, params= {})
     'returned api data'
@@ -10,7 +11,7 @@ end
 
 describe Espago::Client do
   subject { Espago::Client.new( app_id: 'App12345', app_password: 'secret', connection: stubbed_api_connection) }
-  let(:stubbed_api_connection) { StubbedApiConnection.new }
+  let(:stubbed_api_connection) { StubbedApiConnection }
 
   it { subject.should respond_to :app_id }
   it { subject.should respond_to :app_password }
