@@ -2,7 +2,6 @@ require "espago/version"
 require "espago/client"
 require "espago/router"
 require 'forwardable'
-require "pry"
 
 module Espago
 
@@ -26,5 +25,3 @@ module Espago
     end
   end
 end
-
-binding.pry

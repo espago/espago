@@ -1,5 +1,4 @@
 require "espago/api_connection"
-require "pry"
 
 module Espago
   class Client
