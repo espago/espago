@@ -1,7 +1,7 @@
 Espago gem
 ======
 
-[![Build Status](https://travis-ci.org/pkurek/espago.png?branch=master)](https://travis-ci.org/pkurek/espago)
+[![Build Status](https://travis-ci.org/espago/espago.png?branch=master)](https://travis-ci.org/espago/espago)
 
 ### Installing Espago gem
 
@@ -20,7 +20,9 @@ The most standard way of configuring Espago is to do it globally on the Espago c
     Espago.app_id = 'your-espago-app-id'
     Espago.app_password = 'your-espago-secret'
     Espago.public_key = 'your-espago-key'
+    Espago.production = false #sets Espago enviroment to sandbox
 
 ### Sending request
 
     response = Espago.send_request(:clients, :get)
+    response = Espago.clients :get
