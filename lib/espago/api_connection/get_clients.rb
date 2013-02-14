@@ -9,7 +9,7 @@ module Espago
         if params[:client_id]
           @connection.get "clients/#{params[:client_id]}"
         else
-          @connection.get "clients"
+          @connection.get "clients", params
         end
       end
     end
