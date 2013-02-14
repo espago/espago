@@ -27,7 +27,7 @@ module Espago
     end
 
     def get_class_name
-      method.to_s.capitalize + path.to_s.capitalize
+      method.to_s.capitalize + path.to_s.split("_").map(&:capitalize).join
     end
   end
 end
