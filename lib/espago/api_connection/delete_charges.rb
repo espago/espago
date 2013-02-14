@@ -1,6 +1,6 @@
 module Espago
   class ApiConnection
-    class DelteCharges
+    class DeleteCharges
       def initialize(connection)
         @connection = connection
       end
