@@ -12,6 +12,7 @@ end
 describe Espago::Client do
   subject { Espago::Client.new( app_id: 'App12345', app_password: 'secret', connection: stubbed_api_connection) }
   let(:stubbed_api_connection) { StubbedApiConnection }
+  let(:response) { {id: 1, status: "2012"}.to_json }
 
   it { subject.should respond_to :app_id }
   it { subject.should respond_to :app_password }
@@ -34,4 +35,18 @@ describe Espago::Client do
       end
     end
   end
+
+  context "#parse_response" do
+    subject { Espago::Client.new }
+ 
+    it "should delegate work to parser" do
+      Espago::Response.should_receive(:new).with(response)
+      subject.parse_response(response)
+    end
+    
+    it "should parse response into object" do
+      subject.parse_response(response).class.should eq(Espago::Response)
+    end
+  end
+
 end

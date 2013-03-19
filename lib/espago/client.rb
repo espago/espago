@@ -1,4 +1,5 @@
 require "espago/api_connection"
+require "espago/response"
 
 module Espago
   class Client
@@ -17,6 +18,10 @@ module Espago
       connection.create(path, method, params)
     end
 
+    def parse_response(request)
+      Response.new(request)
+    end
+    
     private
     def enviroment
       production ? "https://secure.espago.com/api" : "https://sandbox.espago.com/api"

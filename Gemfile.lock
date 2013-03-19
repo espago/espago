@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    espago (0.0.1)
+    espago (0.0.3)
       facets
       faraday
 
@@ -11,7 +11,7 @@ GEM
     coderay (1.0.8)
     diff-lcs (1.1.3)
     facets (2.9.3)
-    faraday (0.8.4)
+    faraday (0.8.6)
       multipart-post (~> 1.1)
     fuubar (1.1.0)
       rspec (~> 2.0)
