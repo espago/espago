@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Espago::VERSION
   gem.authors       = ["Piotrek"]
   gem.email         = ["pkurek90@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Espago api wrapper}
+  gem.summary       = %q{Espago api wrapper}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
