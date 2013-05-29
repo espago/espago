@@ -2,13 +2,13 @@ require "spec_helper"
 require "espago/api_connection"
 require "json"
 
-class StubbedResponse < Struct.new(:body); end
+class StubbedResponse < Struct.new(:body, :status); end
 
 class Espago::ApiConnection::StubbedPath
   def initialize(connection); end
 
   def request(params = {})
-    StubbedResponse.new("{\"data\":\"returned api data\"}")
+    StubbedResponse.new("{\"data\":\"returned api data\"}", 200)
   end
 end
 
