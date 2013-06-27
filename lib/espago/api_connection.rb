@@ -2,8 +2,11 @@ require "faraday"
 require "json"
 require "forwardable"
 require "espago/router"
+require "espago/error"
+require "espago/response"
 require "facets/kernel/require_all"
 
+require_all "error/*"
 require_all "api_connection/*"
 
 module Espago
