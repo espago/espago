@@ -16,8 +16,8 @@ describe Espago::ApiConnection do
   subject { Espago::ApiConnection.new("http://some.api.example.com") }
 
   context "#create" do
-    it "should return response body in json format" do
-      subject.create(:path, :stubbed).should eq(JSON.parse("{\"data\":\"returned api data\"}"))
+    it "should return response" do
+      subject.create(:path, :stubbed).should be_a_kind_of Espago::Response
     end
   end
 end
