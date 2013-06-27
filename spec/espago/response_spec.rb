@@ -33,5 +33,6 @@ describe Espago::Response do
   its(:state) { should eq("executed") }
   its(:client) { should eq("cli_wm7dGQltAqIfH8") }
   its(:created_at) { should eq(Time.parse("20130222161633")) }
+  its(:imaginated_attribute) { should be_nil }
 
 end
