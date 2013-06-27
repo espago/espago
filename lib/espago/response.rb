@@ -11,7 +11,7 @@ module Espago
       @status = response.status
     end
 
-    def response_id
+    def id
       body["id"]
     end
 
