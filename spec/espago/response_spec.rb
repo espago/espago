@@ -26,12 +26,13 @@ describe Espago::Response do
     }.to_json)
   }
 
-  its(:response_id) { should eq("pay_hViT20SOWaUL_w") }
+  its(:id) { should eq("pay_hViT20SOWaUL_w") }
   its(:description) { should eq("Zakupy z example.com") }
   its(:amount) { should eq("49.99") }
   its(:currency) { should eq("pln") }
   its(:state) { should eq("executed") }
   its(:client) { should eq("cli_wm7dGQltAqIfH8") }
   its(:created_at) { should eq(Time.parse("20130222161633")) }
+  its(:imaginated_attribute) { should be_nil }
 
 end

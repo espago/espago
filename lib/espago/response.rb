@@ -11,32 +11,8 @@ module Espago
       @status = response.status
     end
 
-    def response_id
-      body["id"]
-    end
-
-    def description
-      body["description"]
-    end
-
-    def amount
-      body["amount"]
-    end
-
-    def currency
-      body["currency"]
-    end
-
-    def state
-      body["state"]
-    end
-
-    def client
-      body["client"]
-    end
-
-    def created_at
-      body["client"]
+    def method_missing(attribute_name)
+      body[attribute_name.to_s]
     end
 
     def card

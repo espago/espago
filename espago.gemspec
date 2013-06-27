@@ -6,8 +6,8 @@ require 'espago/version'
 Gem::Specification.new do |gem|
   gem.name          = "espago"
   gem.version       = Espago::VERSION
-  gem.authors       = ["Piotrek"]
-  gem.email         = ["pkurek90@gmail.com"]
+  gem.authors       = ["Piotrek", "Szymon Fiedler"]
+  gem.email         = ["developers@espago.com"]
   gem.description   = %q{Espago api wrapper}
   gem.summary       = %q{Espago api wrapper}
   gem.homepage      = ""

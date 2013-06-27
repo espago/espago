@@ -3,6 +3,9 @@
 .sass-cache
 capybara-*.html
 .rspec
+.ruby-version
+.ruby-gemset
+*.gem
 /.bundle
 /vendor/bundle
 /log/*
