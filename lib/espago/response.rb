@@ -35,10 +35,6 @@ module Espago
       body["client"]
     end
 
-    def created_at
-      body["client"]
-    end
-
     def card
       body["card"] || {}
     end
