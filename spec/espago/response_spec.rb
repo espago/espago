@@ -26,7 +26,7 @@ describe Espago::Response do
     }.to_json)
   }
 
-  its(:response_id) { should eq("pay_hViT20SOWaUL_w") }
+  its(:id) { should eq("pay_hViT20SOWaUL_w") }
   its(:description) { should eq("Zakupy z example.com") }
   its(:amount) { should eq("49.99") }
   its(:currency) { should eq("pln") }
