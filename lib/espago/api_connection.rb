@@ -30,9 +30,9 @@ module Espago
 
     def handle_response(response)
       case response.status
-      when 200
+      when 200,201
         return parse(response.body)
-      when 202
+      when 202,204
         return true
       when 400
         raise Error, { error_message: 'bad request', status: 400 }
