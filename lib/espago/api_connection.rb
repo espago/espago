@@ -11,9 +11,6 @@ module Espago
     extend Forwardable
     def_delegator :@connection, :basic_auth, :authenticate
 
-    Error = Class.new(StandardError)
-    AuthenticationError = Class.new(StandardError)
-
     def initialize(enviroment)
       @connection = Faraday.new(enviroment)
       @router = Router
@@ -30,21 +27,27 @@ module Espago
 
     def handle_response(response)
       case response.status
-      when 200,201
-        return parse(response.body)
-      when 202,204
-        return true
-      when 400
-        raise Error, { error_message: 'bad request', status: 400 }
+      when 200, 201, 204
+        return Response.new(response)
+      when 400, 404, 422
+        raise invalid_request_error(response)
       when 401
-        raise AuthenticationError, { error_message: 'not authenticated', status: 401 }
-      when 404
-        raise Error, { error_message: 'not found', status: 404 } 
-      when 407
-        raise Error, { error_message: 'proxy authentication required', status: 407 } 
+        raise authentication_error(response)
       else
-        raise Error, { error_message: 'unknown error', status: response.status }
+        raise api_error(response.status, response.body)
       end
+    end
+
+    def invalid_request_error(response)
+      InvalidRequestError.new(response)
+    end
+
+    def authentication_error(response)
+      AuthenticationError.new(response)
+    end
+
+    def api_error(response)
+      ApiError.new(response)
     end
 
     def parse(body)

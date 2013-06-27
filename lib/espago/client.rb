@@ -21,7 +21,7 @@ module Espago
     def parse_response(request)
       Response.new(request)
     end
-    
+
     private
     def enviroment
       production ? "https://secure.espago.com/api" : "https://edge.espago.com/api"

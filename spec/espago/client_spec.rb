@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'espago/client'
+require "helpers/fake_response"
 
 class StubbedApiConnection
   def initialize(enviroment); end
@@ -12,7 +13,7 @@ end
 describe Espago::Client do
   subject { Espago::Client.new( app_id: 'App12345', app_password: 'secret', connection: stubbed_api_connection) }
   let(:stubbed_api_connection) { StubbedApiConnection }
-  let(:response) { {id: 1, status: "2012"}.to_json }
+  let(:response) { FakeResponse.new(200, {id: 1, status: "2012"}.to_json) }
 
   it { subject.should respond_to :app_id }
   it { subject.should respond_to :app_password }
@@ -38,12 +39,12 @@ describe Espago::Client do
 
   context "#parse_response" do
     subject { Espago::Client.new }
- 
+
     it "should delegate work to parser" do
       Espago::Response.should_receive(:new).with(response)
       subject.parse_response(response)
     end
-    
+
     it "should parse response into object" do
       subject.parse_response(response).class.should eq(Espago::Response)
     end

@@ -1,10 +1,11 @@
 require 'spec_helper'
 require 'espago/response'
- 
+require 'helpers/fake_response'
+
 describe Espago::Response do
   subject { Espago::Response.new(response)}
   let(:response) {
-    {
+    FakeResponse.new(200, {
       id: "pay_hViT20SOWaUL_w",
       description: "Zakupy z example.com",
       amount: "49.99",
@@ -22,9 +23,9 @@ describe Espago::Response do
         authorized: true,
         created_at: "20130222153946"
       }
-    }.to_json
+    }.to_json)
   }
- 
+
   its(:response_id) { should eq("pay_hViT20SOWaUL_w") }
   its(:description) { should eq("Zakupy z example.com") }
   its(:amount) { should eq("49.99") }
@@ -32,5 +33,5 @@ describe Espago::Response do
   its(:state) { should eq("executed") }
   its(:client) { should eq("cli_wm7dGQltAqIfH8") }
   its(:created_at) { should eq(Time.parse("20130222161633")) }
- 
+
 end
