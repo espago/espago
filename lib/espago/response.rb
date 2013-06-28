@@ -20,7 +20,7 @@ module Espago
     end
 
     def created_at
-      Time.parse body["created_at"]
+      Time.at(body["created_at"]) rescue nil
     end
 
     private
