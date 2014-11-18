@@ -28,7 +28,7 @@ module Espago
     end
 
     def api_version_header
-      if @api_version == 3
+      if @api_version.to_s == '3'
         {'Accept' => "application/vnd.espago.v3+json"}
       else
         {'Accept' => "application/vnd.espago.v2+json"}
