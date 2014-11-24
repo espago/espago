@@ -6,8 +6,13 @@ require "espago/error"
 require "espago/response"
 require "facets/kernel/require_all"
 
-require_all "error/*"
-require_all "api_connection/*"
+begin
+  require_all "error/*"
+  require_all "api_connection/*"
+rescue LoadError #if "require_all" method isn't from kernel gem
+  require_rel "error/*"
+  require_rel "api_connection/*"
+end
 
 module Espago
   class ApiConnection
