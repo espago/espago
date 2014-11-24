@@ -21,8 +21,9 @@ class Espago::ApiConnection::UnauthorizedPath
   end
 end
 
+
 describe Espago::ApiConnection do
-  subject { Espago::ApiConnection.new("http://some.api.example.com") }
+  subject { Espago::ApiConnection.new("http://some.api.example.com",{'Accept' => "application/vnd.espago.v2+json"}) }
 
   context "#create" do
     it "returns response" do

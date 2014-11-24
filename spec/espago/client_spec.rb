@@ -3,7 +3,7 @@ require 'espago/client'
 require "helpers/fake_response"
 
 class StubbedApiConnection
-  def initialize(enviroment); end
+  def initialize(enviroment,headers); end
   def authenticate(app_id, app_password); end
   def create(path, method, params= {})
     'returned api data'
