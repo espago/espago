@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/invoice_items
+    body:
+      encoding: US-ASCII
+      string: amount=49.99&currency=pln&date=1417126942&description=Test+invoice+items&client=cli_90Pi6Jf0ndl_PP
+    headers:
+      Accept:
+      - application/vnd.espago.v2+json
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Meta-Request-Version:
+      - 0.2.2
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"714b60c51a0404027495a89415e37013"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _session_id=e4ff4995a1280cdb483e8dfdcf71a9a8; path=/; HttpOnly
+      X-Request-Id:
+      - 98eb62f94ba1fd68a6a512ee0f3b1e7d
+      X-Runtime:
+      - '0.416130'
+      Connection:
+      - close
+      Server:
+      - thin 1.5.0 codename Knife
+    body:
+      encoding: UTF-8
+      string: '{"id":"ii_WDzszvhTshe78Xd","client":"cli_90Pi6Jf0ndl_PP","description":"Test
+        invoice items","amount":"49.99","currency":"pln","created_at":1417102491}'
+    http_version:
+  recorded_at: Thu, 27 Nov 2014 15:34:51 GMT
+recorded_with: VCR 2.9.3

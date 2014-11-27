@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/charges
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.espago.v2+json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Meta-Request-Version:
+      - 0.2.2
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"36ab75a48cfe4bce4bd0ff6d680a374e"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _session_id=e7fc731f6d8d81b24924c4b812b9da80; path=/; HttpOnly
+      X-Request-Id:
+      - 5fadd0cef6940344df06709e4ba0be7a
+      X-Runtime:
+      - '1.233832'
+      Connection:
+      - close
+      Server:
+      - thin 1.5.0 codename Knife
+    body:
+      encoding: UTF-8
+      string: '{"count":596,"charges":[{"id":"pay_uxILF7D-heZaT2","description":"Golden
+        plan 2014-11-26","channel":"elavon","amount":"123.45","currency":"pln","state":"executed","client":"cli_90Pi6Jf0ndl_PP","created_at":1417030497,"card":{"company":"VI","last4":"4242","year":2019,"month":3,"first_name":"Jan","last_name":"Kowalski","authorized":null,"created_at":1416842254},"issuer_response_code":"00","reversable":true,"invoice":"in_tUCMhwlg2nkvAaL","subscription":"sub_8yYuCBKdywr7e2","transaction_id":"tn_mQKcgfsNw"},{"id":"pay_Wmu3hmXJIG4jsg","description":"Opis
+        transakcji","channel":"elavon","amount":"49.99","currency":"pln","state":"executed","client":"cli_PQI_mlA6DXe1nP","created_at":1417009684,"issuer_response_code":"00","reversable":true,"transaction_id":"tn_0pydA_RVa"},{"id":"pay_JEWqRdltANdqzH","description":"Opis
+        transakcji","channel":"elavon","amount":"49.99","currency":"pln","state":"preauthorized","client":"cli_0Z-QNfJjl0R7J3","created_at":1417008454,"issuer_response_code":"00","completed":false,"reversable":true,"transaction_id":"tn_2WMKrXcW-"},{"id":"pay_kQmS_3RTfm4eix","description":"Opis
+        transakcji","channel":"elavon","amount":"49.99","currency":"pln","state":"reversed","client":"cli_5rDoJyvKDM4RbM","created_at":1417005334,"issuer_response_code":"00","transaction_id":"tn_tAxxrivny"},{"id":"pay_b1Y2ZuJNXXRDM5","description":"Opis
+        transakcji","channel":"elavon","amount":"49.99","currency":"pln","state":"reversed","client":"cli_VTsnOHjUohL02K","created_at":1416920783,"issuer_response_code":"00","transaction_id":"tn_mhAlwzK0x"},{"id":"pay_ftMx2WoXveVOdF","description":"Opis
+        transakcji","channel":"elavon","amount":"49.99","currency":"pln","state":"reversed","client":"cli_84RAbl__uG21sV","created_at":1416920765,"issuer_response_code":"00","transaction_id":"tn_feetNVaqb"},{"id":"pay_mTOngouLTJWZ0w","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"executed","client":"cli_YM5tKz6-IfhN7T","created_at":1416917311,"issuer_response_code":"00","transaction_id":"tn_5puLXUWDf"},{"id":"pay_yBeZDDdvI9-xPs","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_As1e5K4jpHy5Aw","created_at":1416917203,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_sC6zyk_5F"},{"id":"pay_Mc4aIdi0mMTwqw","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_DYuoBap-1hJzBU","created_at":1416916959,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_a0UiElEVZ"},{"id":"pay_dNeWnyjbgh8mry","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_DAGc95pNHoYTup","created_at":1416916878,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_egEqc9QKG"},{"id":"pay_HxEZHsvAe_DKEf","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_7FXtokGKn71rBJ","created_at":1416916867,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_MfEarJeKF"},{"id":"pay_kabeiSF6rqkXhf","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_PRg_F5LPOzlaw0","created_at":1416916839,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_nDxoks8Nw"},{"id":"pay_AqipUAnHNnxk6e","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_Gq_WKAtb1sk-_H","created_at":1416916725,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_3Q5dbU_B_"},{"id":"pay_M_3aKKX3hEwdJR","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_ZAe6FMTGpAx2D1","created_at":1416916429,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_PyZneugYr"},{"id":"pay_sM6u2z1uvYuLtp","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_qRRYr2riz-IEqd","created_at":1416915972,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_RVWC2QZAL"},{"id":"pay_9dhQSFZ5ZoCTot","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_fxWPgeAkWOo1ZU","created_at":1416915851,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_uNcAmJQIP"},{"id":"pay_VhLoTUAI4SdKAQ","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_qaiHjuRdLKrDfy","created_at":1416915841,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_d7oo1A-83"},{"id":"pay_WtOOd39mtQ5U9A","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_9qUJ-X9sF-x8H4","created_at":1416915721,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_m-wM2cSAu"},{"id":"pay_NBdRkyjAUHCS4b","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_GO5IjkVbJJM8EP","created_at":1416915649,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_vHPyGDu76"},{"id":"pay_OA5PkgCKJXAfS4","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_Ays1Jh3WdgvwdF","created_at":1416915327,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_0E7kcajyW"},{"id":"pay_UJWQP-sGbC_7Wo","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_FqguquyelXPRme","created_at":1416915312,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_mFqUywuHv"},{"id":"pay_xfhHX_6-YRcCnp","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"rejected","client":"cli_n5hLfjUbGg9_kd","created_at":1416915291,"reject_reason":"card
+        expired","issuer_response_code":"54","transaction_id":"tn_FDIGDOPtr"},{"id":"pay_8UPROeEjy1mfiZ","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"new","client":"cli_3HMQxyuFUlqrof","created_at":1416915219,"issuer_response_code":"","transaction_id":"tn_zJrhC6LIg"},{"id":"pay_0dAV3hHjTOynda","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"new","client":"cli_dJ4AONo8kaB9dW","created_at":1416915092,"issuer_response_code":"","transaction_id":"tn_5Ye7_y71v"},{"id":"pay_q4YyzX_LopLa3V","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"new","client":"cli_BYyLfXi2Y1yD13","created_at":1416915011,"issuer_response_code":"","transaction_id":"tn_Zrkeox6AF"},{"id":"pay_YAM-5tPuCW7zc5","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"new","client":"cli_WbJy48Hih3qzLl","created_at":1416914988,"issuer_response_code":"","transaction_id":"tn_Zq0C-zIXS"},{"id":"pay_yAUVDCvLcKTdlt","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"new","client":"cli_RQ2JS7ZkuHmjTA","created_at":1416914971,"issuer_response_code":"","transaction_id":"tn__pAcdnNKx"},{"id":"pay_9Sol_CfGKSwfzu","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"new","client":"cli_S7FbD61XKua7hH","created_at":1416914232,"issuer_response_code":"","transaction_id":"tn_HN3yjWFhA"},{"id":"pay_F6X-6bq8NrP8TV","description":"payment_id:17","channel":"elavon","amount":"369.00","currency":"PLN","state":"executed","client":"cli_1_9zd3sba03Os5","created_at":1416827486,"issuer_response_code":"00","transaction_id":"tn_QelKAfJje"},{"id":"pay_SejDXvQj3EDuOM","description":"Opis
+        transakcji","channel":"elavon","amount":"49.99","currency":"pln","state":"failed","client":"cli_bjyYV5SMWyqaHk","created_at":1416408068,"issuer_response_code":null,"transaction_id":"tn_n2vdQTxX6"}]}'
+    http_version:
+  recorded_at: Wed, 26 Nov 2014 21:46:10 GMT
+recorded_with: VCR 2.9.3

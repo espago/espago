@@ -43,7 +43,7 @@ module Espago
       when 401
         raise authentication_error(response)
       else
-        raise api_error(response.status, response.body)
+        raise api_error(response)
       end
     end
 
@@ -59,8 +59,5 @@ module Espago
       ApiError.new(response)
     end
 
-    def parse(body)
-      JSON.parse body
-    end
   end
 end

@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/charges
+    body:
+      encoding: US-ASCII
+      string: amount=49.99&currency=PLN&description=Test12345&card%5Bfirst_name%5D=Jan&card%5Blast_name%5D=Kowalski&card%5Bnumber%5D=4242424242424242&card%5Bverification_value%5D=123&card%5Byear%5D=2015&card%5Bmonth%5D=2
+    headers:
+      Accept:
+      - application/vnd.espago.v2+json
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Meta-Request-Version:
+      - 0.2.2
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"972a1a29ea0e1d4a67e169d8b84b506a"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _session_id=d98575dab0f9a2cbdc9c8c91fab16247; path=/; HttpOnly
+      X-Request-Id:
+      - 2f00526303e5645e1c0a69f02d9a0afb
+      X-Runtime:
+      - '1.214083'
+      Connection:
+      - close
+      Server:
+      - thin 1.5.0 codename Knife
+    body:
+      encoding: UTF-8
+      string: '{"id":"pay_mTOngouLTJWZ0w","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"executed","client":"cli_YM5tKz6-IfhN7T","created_at":1416917311,"card":{"company":"VI","last4":"4242","year":2015,"month":2,"first_name":"Jan","last_name":"Kowalski","authorized":null,"created_at":1416917311},"issuer_response_code":"00","reversable":true,"transaction_id":"tn_5puLXUWDf"}'
+    http_version:
+  recorded_at: Tue, 25 Nov 2014 12:08:32 GMT
+recorded_with: VCR 2.9.3

@@ -11,7 +11,7 @@ class StubbedApiConnection
 end
 
 describe Espago::Client do
-  subject { Espago::Client.new( app_id: 'App12345', app_password: 'secret', connection: stubbed_api_connection, api_version: 2) }
+  subject { Espago::Client.new( app_id: 'app_id_test', app_password: 'secret', connection: stubbed_api_connection, api_version: 2) }
   let(:stubbed_api_connection) { StubbedApiConnection }
   let(:response) { FakeResponse.new(200, {id: 1, status: "2012"}.to_json) }
 

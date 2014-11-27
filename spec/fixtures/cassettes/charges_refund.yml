@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/charges/pay_lQGyIon5qG59O5/refund
+    body:
+      encoding: US-ASCII
+      string: charge_id=pay_lQGyIon5qG59O5
+    headers:
+      Accept:
+      - application/vnd.espago.v2+json
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Meta-Request-Version:
+      - 0.2.2
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"cbdc619a2d93a369a022248154fbf661"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _session_id=1d1df3d66484a4269b07826856230f97; path=/; HttpOnly
+      X-Request-Id:
+      - fa8ab1f40408cfdb01470c2547ad7525
+      X-Runtime:
+      - '1.375876'
+      Connection:
+      - close
+      Server:
+      - thin 1.5.0 codename Knife
+    body:
+      encoding: UTF-8
+      string: '{"id":"pay_lQGyIon5qG59O5","description":"Opis transakcji","amount":"49.99","refunded_amount":"49.99","currency":"pln","state":"refunded","client":"cli_3szMS5l5b6pPyH","created_at":1416326675,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null}}'
+    http_version:
+  recorded_at: Tue, 25 Nov 2014 13:44:33 GMT
+recorded_with: VCR 2.9.3

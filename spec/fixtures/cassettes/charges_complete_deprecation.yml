@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/charges/pay_Wmu3hmXJIG4jsg/complete
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.espago.v2+json
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Meta-Request-Version:
+      - 0.2.2
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"c1125d6013e41894d2706e947d6e942c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _session_id=0a801889719aa85d0cc346668d43d31e; path=/; HttpOnly
+      X-Request-Id:
+      - f5cabe682fb1e76967d5124e863f99a0
+      X-Runtime:
+      - '0.929976'
+      Connection:
+      - close
+      Server:
+      - thin 1.5.0 codename Knife
+    body:
+      encoding: UTF-8
+      string: '{"id":"pay_Wmu3hmXJIG4jsg","description":"Opis transakcji","channel":"elavon","amount":"49.99","currency":"pln","state":"executed","client":"cli_PQI_mlA6DXe1nP","created_at":1417009684,"issuer_response_code":"00","reversable":true,"transaction_id":"tn_0pydA_RVa"}'
+    http_version:
+  recorded_at: Wed, 26 Nov 2014 13:48:17 GMT
+recorded_with: VCR 2.9.3

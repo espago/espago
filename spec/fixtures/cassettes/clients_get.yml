@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/clients
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.espago.v2+json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Meta-Request-Version:
+      - 0.2.2
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"1eb158a92dc465ec1b96223c144c65bb"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _session_id=40f058895c1d71670124e01a1945b79f; path=/; HttpOnly
+      X-Request-Id:
+      - b8b9d5958d5356ab3c98a50478edcb4d
+      X-Runtime:
+      - '1.024735'
+      Connection:
+      - close
+      Server:
+      - thin 1.5.0 codename Knife
+    body:
+      encoding: UTF-8
+      string: '{"count":597,"clients":[{"email":null,"id":"cli_5rDoJyvKDM4RbM","created_at":1417005334,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_w0Se2smYwyQ0Uw","created_at":1417004837,"description":null,"card":{"company":"VI","last4":"1112","year":2020,"month":1,"first_name":"Jan","last_name":"Kowalski","authorized":null,"created_at":1417004837},"deleted":false},{"email":null,"id":"cli_VTsnOHjUohL02K","created_at":1416920783,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_84RAbl__uG21sV","created_at":1416920765,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_YM5tKz6-IfhN7T","created_at":1416917311,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_As1e5K4jpHy5Aw","created_at":1416917203,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_DYuoBap-1hJzBU","created_at":1416916959,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_DAGc95pNHoYTup","created_at":1416916878,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_7FXtokGKn71rBJ","created_at":1416916867,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_PRg_F5LPOzlaw0","created_at":1416916839,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_Gq_WKAtb1sk-_H","created_at":1416916725,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_ZAe6FMTGpAx2D1","created_at":1416916428,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_qRRYr2riz-IEqd","created_at":1416915972,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_fxWPgeAkWOo1ZU","created_at":1416915851,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_qaiHjuRdLKrDfy","created_at":1416915841,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_9qUJ-X9sF-x8H4","created_at":1416915721,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_GO5IjkVbJJM8EP","created_at":1416915649,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_Ays1Jh3WdgvwdF","created_at":1416915327,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_FqguquyelXPRme","created_at":1416915312,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_n5hLfjUbGg9_kd","created_at":1416915291,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_3HMQxyuFUlqrof","created_at":1416915219,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_dJ4AONo8kaB9dW","created_at":1416915092,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_BYyLfXi2Y1yD13","created_at":1416915011,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_WbJy48Hih3qzLl","created_at":1416914987,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false},{"email":null,"id":"cli_RQ2JS7ZkuHmjTA","created_at":1416914971,"description":null,"card":{"company":null,"last4":null,"year":null,"month":null,"first_name":null,"last_name":null,"authorized":null,"created_at":null},"deleted":false}]}'
+    http_version:
+  recorded_at: Wed, 26 Nov 2014 13:00:20 GMT
+recorded_with: VCR 2.9.3

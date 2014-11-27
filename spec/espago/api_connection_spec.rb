@@ -4,7 +4,7 @@ require "json"
 
 class StubbedResponse < Struct.new(:body, :status); end
 
-class Espago::ApiConnection::StubbedPath
+class Espago::ApiConnection::PathStubbed
   def initialize(connection); end
 
   def request(params = {})
@@ -12,7 +12,7 @@ class Espago::ApiConnection::StubbedPath
   end
 end
 
-class Espago::ApiConnection::UnauthorizedPath
+class Espago::ApiConnection::PathUnauthorized
   def initialize(connection)
   end
 

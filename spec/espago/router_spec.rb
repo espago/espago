@@ -1,7 +1,7 @@
 require "spec_helper"
 require "espago/router"
 
-class Espago::ApiConnection::GetStubbedRequest; end
+class Espago::ApiConnection::StubbedRequestGet; end
 
 describe Espago::Router do
   subject { Espago::Router.new(:stubbed_request, :get) }
@@ -11,7 +11,7 @@ describe Espago::Router do
 
   context "#route" do
     it "should get a class name depending on path and method" do
-      subject.route.should eq( Espago::ApiConnection::GetStubbedRequest )
+      subject.route.should eq( Espago::ApiConnection::StubbedRequestGet )
     end
 
     it "should raise error if class not found" do

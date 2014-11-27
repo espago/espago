@@ -19,11 +19,12 @@ The most standard way of configuring Espago is to do it globally on the Espago c
     Espago.app_password = 'your-espago-secret'
     Espago.public_key = 'your-espago-key'
     Espago.production = false #sets Espago enviroment to sandbox
+    Espago.api_version = 2
 
 ## Sending request
 
-There are two possible ways of sending requests by using Espago gem. 
-The first possibility is to call everytime send_request() function with proper path, HTTP method and parameters. 
+There are two possible ways of sending requests by using Espago gem.
+The first possibility is to call everytime send_request() function with proper path, HTTP method and parameters.
 
     Espago.send_request path, request_type, [parameters]
 
@@ -31,7 +32,7 @@ Here it is an example of using this way to create new client:
 
     Espago.send_request :clients, :post, {description: "Jan Kowalski", email: "kowalski@example.com", card: {first_name: "Jan", last_name: "Kowalski", number: "4242424242424242", year: "2019", month: "03"}}
 
-The second possible way to sending requests by Espago gem is to call the proper path on Espago object, using specific HTTP method and setting chosen parameteres. 
+The second possible way to sending requests by Espago gem is to call the proper path on Espago object, using specific HTTP method and setting chosen parameteres.
 
     Espago.path request_type, [parameters]
 
@@ -67,7 +68,7 @@ Espago returns an special response object:
         "deleted"=>false},
       @status=201>
 
-To get response status code you should use "status" method. 
+To get response status code you should use "status" method.
 For example
 
     client.status
@@ -98,17 +99,20 @@ can return hash with client details:
       "deleted"=>false
     }
 
-Now if you want get customer's e-mail this short code should execute operation:
+Now if you want get customer's e-mail(or anoher field in 1st level of response) this short code should execute operation:
 
-    client.body["email"]
+    client.email
     => "kowalski@example.com"
+
+    client.card
+    => {"company"=>"VI", "last4"=>"4242", "year"=>2019, "month"=>3, "first_name"=>"Jan", "last_name"=>"Kowalski", "authorized"=>nil, "created_at"=>1381834598}
 
 ## All possible paths (resources)
 
 <table align="center">
 <tr>
   <th>Parameter</th><th>Description</th><th>Documentation link</th>
-</tr>  
+</tr>
 <tr>
   <th>tokens</th><td>special id for credit card</td><td>https://www.espago.com/doc/en#card-tokens</td>
 </tr>

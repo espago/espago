@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/invoices
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.espago.v2+json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Meta-Request-Version:
+      - 0.2.2
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"7db4d65bd13c990296496625edb98288"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _session_id=07aa055fcbf0f1f46b07d019ccb4fe43; path=/; HttpOnly
+      X-Request-Id:
+      - 8147f822925eb366f35d1beac7017cd5
+      X-Runtime:
+      - '0.330160'
+      Connection:
+      - close
+      Server:
+      - thin 1.5.0 codename Knife
+    body:
+      encoding: UTF-8
+      string: '{"count":1,"invoices":[{"id":"in_tUCMhwlg2nkvAaL","date":1417030496,"client":"cli_90Pi6Jf0ndl_PP","subscription":"sub_8yYuCBKdywr7e2","amount":"123.45","currency":"pln","paid":true,"issuer_response_code":"00","attempts":1,"next_payment_attempt":null,"created_at":1417030497}]}'
+    http_version:
+  recorded_at: Wed, 26 Nov 2014 19:49:45 GMT
+recorded_with: VCR 2.9.3
