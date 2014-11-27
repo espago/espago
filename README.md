@@ -2,6 +2,9 @@ Espago gem
 ======
 
 [![Build Status](https://travis-ci.org/espago/espago.png?branch=master)](https://travis-ci.org/espago/espago)
+[![Gem Version](https://badge.fury.io/rb/espago.svg)](http://badge.fury.io/rb/espago)
+[![Code Climate](https://codeclimate.com/github/espago/espago/badges/gpa.svg)](https://codeclimate.com/github/espago/espago)
+[![Test Coverage](https://codeclimate.com/github/espago/espago/badges/coverage.svg)](https://codeclimate.com/github/espago/espago)
 
 ### Installing Espago gem
 
