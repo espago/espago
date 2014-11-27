@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/tokens/cc_166YDMhrVcemFb3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.espago.v2+json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Meta-Request-Version:
+      - 0.2.2
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"bebba4898713a5205954333a29c0e1cc"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _session_id=eed7d2be93464a5f499c50ec411a3fa3; path=/; HttpOnly
+      X-Request-Id:
+      - 7554ad63074b0bbbadb71b495edad7fc
+      X-Runtime:
+      - '0.258735'
+      Connection:
+      - close
+      Server:
+      - thin 1.5.0 codename Knife
+    body:
+      encoding: UTF-8
+      string: '{"id":"cc_166YDMhrVcemFb3","created_at":1417029320,"used":false,"card":{"company":"VI","last4":"4242","year":2015,"month":2,"first_name":"Jan","last_name":"Kowalski","authorized":null,"created_at":1417029320}}'
+    http_version:
+  recorded_at: Wed, 26 Nov 2014 19:24:59 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/plans/pl_XczKHr_42CRiKXZ
+    body:
+      encoding: US-ASCII
+      string: plan_id=pl_XczKHr_42CRiKXZ&period_unit=month&period=1&amount=149.99&currency=pln&description=Test+Plan
+    headers:
+      Accept:
+      - application/vnd.espago.v2+json
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Meta-Request-Version:
+      - 0.2.2
+      X-Ua-Compatible:
+      - IE=Edge
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _session_id=444820a95c126c20986637ed3efd2fd4; path=/; HttpOnly
+      X-Request-Id:
+      - f6497ce3e4a20c75130f5cac324381a1
+      X-Runtime:
+      - '0.489553'
+      Connection:
+      - close
+      Server:
+      - thin 1.5.0 codename Knife
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Wed, 26 Nov 2014 17:51:57 GMT
+recorded_with: VCR 2.9.3

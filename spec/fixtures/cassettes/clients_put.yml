@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/clients/cli_w0Se2smYwyQ0Uw
+    body:
+      encoding: US-ASCII
+      string: client_id=cli_w0Se2smYwyQ0Uw&card%5Bfirst_name%5D=Jan&card%5Blast_name%5D=Kowalski&card%5Bnumber%5D=4242424242424242&card%5Bverification_value%5D=123&card%5Byear%5D=2015&card%5Bmonth%5D=2
+    headers:
+      Accept:
+      - application/vnd.espago.v2+json
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Meta-Request-Version:
+      - 0.2.2
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"db2687e54fc4bc67557e2e73a00c3f76"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _session_id=2791c9a2f57fc867767a945b8c4c9e71; path=/; HttpOnly
+      X-Request-Id:
+      - bab411e109245b7f281f75ab06326b06
+      X-Runtime:
+      - '0.374000'
+      Connection:
+      - close
+      Server:
+      - thin 1.5.0 codename Knife
+    body:
+      encoding: UTF-8
+      string: '{"email":null,"id":"cli_w0Se2smYwyQ0Uw","created_at":1417004837,"description":null,"card":{"company":"VI","last4":"4242","year":2015,"month":2,"first_name":"Jan","last_name":"Kowalski","authorized":null,"created_at":1417008463},"deleted":false}'
+    http_version:
+  recorded_at: Wed, 26 Nov 2014 13:27:43 GMT
+recorded_with: VCR 2.9.3

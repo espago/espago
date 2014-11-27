@@ -1,13 +1,12 @@
 module Espago
   class ApiConnection
-    class PostTokens
+    class SubscriptionsDelete
       def initialize(connection)
         @connection = connection
-        @connection.basic_auth(Espago.public_key, '')
       end
 
       def request(params = {})
-        @connection.post "tokens", params
+        @connection.delete "subscriptions/#{params[:subscription_id]}"
       end
     end
   end

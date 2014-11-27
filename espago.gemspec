@@ -6,7 +6,7 @@ require 'espago/version'
 Gem::Specification.new do |gem|
   gem.name          = "espago"
   gem.version       = Espago::VERSION
-  gem.authors       = ["Piotrek", "Szymon Fiedler"]
+  gem.authors       = ["Piotrek", "Szymon Fiedler","Waclaw Luczak"]
   gem.email         = ["developers@espago.com"]
   gem.description   = %q{Espago api wrapper}
   gem.summary       = %q{Espago api wrapper}
@@ -27,4 +27,9 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "fuubar"
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rb-fsevent', '~> 0.9.1'
+  gem.add_development_dependency 'webmock'
+  gem.add_development_dependency 'vcr'
+  gem.add_development_dependency 'codeclimate-test-reporter'
+
+
 end

@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/invoice_items/ii_WDzszvhTshe78Xd
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.espago.v2+json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      X-Meta-Request-Version:
+      - 0.2.2
+      X-Ua-Compatible:
+      - IE=Edge
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _session_id=4e1d48b453424f89cfdf94a555ca6432; path=/; HttpOnly
+      X-Request-Id:
+      - 384a689f038af2b1a5440ab8c22c87bd
+      X-Runtime:
+      - '0.410313'
+      Connection:
+      - close
+      Server:
+      - thin 1.5.0 codename Knife
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Thu, 27 Nov 2014 15:37:11 GMT
+recorded_with: VCR 2.9.3

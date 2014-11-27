@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/charges/pay_kQmS_3RTfm4eix
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.espago.v2+json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Meta-Request-Version:
+      - 0.2.2
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"e9b260d3d5b26ceec40f977d48e25614"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _session_id=d6acb24518204a1267f6a2ccb130a48a; path=/; HttpOnly
+      X-Request-Id:
+      - b41422297a3e9f5c8b1143f80a34ffe0
+      X-Runtime:
+      - '1.450934'
+      Connection:
+      - close
+      Server:
+      - thin 1.5.0 codename Knife
+    body:
+      encoding: UTF-8
+      string: '{"id":"pay_kQmS_3RTfm4eix","description":"Opis transakcji","channel":"elavon","amount":"49.99","currency":"pln","state":"reversed","client":"cli_5rDoJyvKDM4RbM","created_at":1417005334,"issuer_response_code":"00","transaction_id":"tn_tAxxrivny"}'
+    http_version:
+  recorded_at: Wed, 26 Nov 2014 12:41:24 GMT
+recorded_with: VCR 2.9.3

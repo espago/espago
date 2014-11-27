@@ -8,8 +8,8 @@ module Espago
   class << self
     extend Forwardable
 
-    def_delegators :default_client, :public_key, :app_id, :app_password, :send_request, :production
-    def_delegators :default_client, :public_key= , :app_id= , :app_password=, :production=
+    def_delegators :default_client, :public_key, :app_id, :app_password, :api_version, :send_request, :production
+    def_delegators :default_client, :public_key= , :app_id= , :app_password=, :api_version=, :production=
 
     def method_missing(method, *args, &block)
       if Router.new(method, args[0]).path_exists?

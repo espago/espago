@@ -1,15 +1,15 @@
 module Espago
   class ApiConnection
-    class GetCharges
+    class InvoicesGet
       def initialize(connection)
         @connection = connection
       end
 
       def request(params = {})
-        if params[:charge_id]
-          @connection.get "charges/#{params[:charge_id]}"
+        if params[:invoice_id]
+          @connection.get "invoices/#{params[:invoice_id]}"
         else
-          @connection.get "charges", params
+          @connection.get "invoices", params
         end
       end
     end

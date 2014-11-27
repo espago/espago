@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/invoices/in_tUCMhwlg2nkvAaL/line_items
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.espago.v2+json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Meta-Request-Version:
+      - 0.2.2
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"5dcec02d42c40746d71351ecdd23030f"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _session_id=3f41d69eb257ef08b40d2716a385157e; path=/; HttpOnly
+      X-Request-Id:
+      - ce3d335717517cc45b5bd9c6760c51b0
+      X-Runtime:
+      - '0.425340'
+      Connection:
+      - close
+      Server:
+      - thin 1.5.0 codename Knife
+    body:
+      encoding: UTF-8
+      string: '{"count":1,"invoice_items":[{"id":"ii_5LS-YR7S1QaJBl3","client":"cli_90Pi6Jf0ndl_PP","description":"Golden
+        plan","amount":"123.45","currency":"pln","created_at":1417030496}]}'
+    http_version:
+  recorded_at: Wed, 26 Nov 2014 21:54:33 GMT
+recorded_with: VCR 2.9.3

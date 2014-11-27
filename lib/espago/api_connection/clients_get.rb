@@ -1,6 +1,6 @@
 module Espago
   class ApiConnection
-    class GetClients
+    class ClientsGet
       def initialize(connection)
         @connection = connection
       end

@@ -6,16 +6,22 @@ require "espago/error"
 require "espago/response"
 require "facets/kernel/require_all"
 
-require_all "error/*"
-require_all "api_connection/*"
+begin
+  require_all "error/*"
+  require_all "api_connection/*"
+rescue LoadError #if "require_all" method isn't from kernel gem
+  require_rel "error/*"
+  require_rel "api_connection/*"
+end
 
 module Espago
   class ApiConnection
     extend Forwardable
     def_delegator :@connection, :basic_auth, :authenticate
 
-    def initialize(enviroment)
+    def initialize(enviroment,headers)
       @connection = Faraday.new(enviroment)
+      @connection.headers = headers
       @router = Router
     end
 
@@ -37,7 +43,7 @@ module Espago
       when 401
         raise authentication_error(response)
       else
-        raise api_error(response.status, response.body)
+        raise api_error(response)
       end
     end
 
@@ -53,8 +59,5 @@ module Espago
       ApiError.new(response)
     end
 
-    def parse(body)
-      JSON.parse body
-    end
   end
 end

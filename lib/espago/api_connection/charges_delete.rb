@@ -1,12 +1,12 @@
 module Espago
   class ApiConnection
-    class PostComplete
+    class ChargesDelete
       def initialize(connection)
         @connection = connection
       end
 
       def request(params = {})
-        @connection.post "charges/#{params[:charge_id]}/complete"
+        @connection.delete "charges/#{params[:charge_id]}"
       end
     end
   end
