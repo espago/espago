@@ -1,6 +1,7 @@
 require "espago/version"
 require "espago/client"
 require "espago/router"
+require "espago/back_request"
 require 'forwardable'
 
 module Espago

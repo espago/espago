@@ -1,16 +1,12 @@
 module Espago
   class ApiConnection
-    class PlansGet
+    class PlansGet < ApiGet
       def initialize(connection)
         @connection = connection
       end
 
       def request(params = {})
-        if params[:plan_id]
-          @connection.get "plans/#{params[:plan_id]}"
-        else
-          @connection.get "plans", params
-        end
+        super('plans',params,params[:plan_id])
       end
     end
   end
