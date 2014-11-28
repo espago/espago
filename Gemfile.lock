@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    espago (0.1.0)
+    espago (0.1.1)
       facets
       faraday
 
