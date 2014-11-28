@@ -1,12 +1,8 @@
 module Espago
   class ApiConnection
-    class ClientsAuthorizePost
-      def initialize(connection)
-        @connection = connection
-      end
-
+    class ClientsAuthorizePost < ApiPost
       def request(params = {})
-        @connection.post "clients/#{params[:client_id]}/authorize"
+        super("clients/#{params[:client_id]}/authorize")
       end
     end
   end

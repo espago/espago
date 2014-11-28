@@ -1,12 +1,8 @@
 module Espago
   class ApiConnection
-    class InvoiceItemsGet
-      def initialize(connection)
-        @connection = connection
-      end
-
+    class InvoiceItemsGet < ApiGet
       def request(params = {})
-        @connection.get "invoice_items/#{params[:invoice_item_id]}"
+        super("invoice_items",{},params[:invoice_item_id])
       end
     end
   end

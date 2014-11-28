@@ -1,12 +1,8 @@
 module Espago
   class ApiConnection
-    class ClientsDelete
-      def initialize(connection)
-        @connection = connection
-      end
-
+    class ClientsDelete < ApiDelete
       def request(params = {})
-        @connection.delete "clients/#{params[:client_id]}"
+       super("clients",params[:client_id])
       end
     end
   end

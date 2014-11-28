@@ -1,13 +1,13 @@
 module Espago
   class ApiConnection
-    class CompletePost
+    class CompletePost < ApiPost
       def initialize(connection)
         warn "[DEPRECATION] `complete` is deprecated.  Please use `charges_complete` instead."
-        @connection = connection
+        super(connection)
       end
 
       def request(params = {})
-        @connection.post "charges/#{params[:charge_id]}/complete"
+        super("charges/#{params[:charge_id]}/complete")
       end
     end
   end

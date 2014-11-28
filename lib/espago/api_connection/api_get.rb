@@ -1,6 +1,6 @@
 module Espago
   class ApiConnection
-    class ApiGet
+    class ApiGet < Api
       def request(path, params = {}, param_id=nil)
         if param_id
           @connection.get "#{path}/#{param_id}"

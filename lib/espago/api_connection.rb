@@ -6,6 +6,12 @@ require "espago/error"
 require "espago/response"
 require "facets/kernel/require_all"
 
+require "espago/api_connection/api"
+require "espago/api_connection/api_delete"
+require "espago/api_connection/api_get"
+require "espago/api_connection/api_post"
+require "espago/api_connection/api_put"
+
 begin
   require_all "error/*"
   require_all "api_connection/*"

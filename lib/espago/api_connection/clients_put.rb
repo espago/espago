@@ -1,12 +1,8 @@
 module Espago
   class ApiConnection
-    class ClientsPut
-      def initialize(connection)
-        @connection = connection
-      end
-
+    class ClientsPut < ApiPut
       def request(params = {})
-        @connection.put "clients/#{params[:client_id]}", params
+        super("clients/#{params[:client_id]}", params)
       end
     end
   end

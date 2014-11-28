@@ -1,12 +1,8 @@
 module Espago
   class ApiConnection
-    class ClientsPost
-      def initialize(connection)
-        @connection = connection
-      end
-
+    class ClientsPost < ApiPost
       def request(params = {})
-        @connection.post 'clients', params
+        super('clients', params)
       end
     end
   end

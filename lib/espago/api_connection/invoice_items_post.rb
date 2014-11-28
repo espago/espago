@@ -1,12 +1,8 @@
 module Espago
   class ApiConnection
-    class InvoiceItemsPost
-      def initialize(connection)
-        @connection = connection
-      end
-
+    class InvoiceItemsPost < ApiPost
       def request(params = {})
-        @connection.post "invoice_items", params
+        super("invoice_items", params)
       end
     end
   end
