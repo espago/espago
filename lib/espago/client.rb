@@ -24,7 +24,7 @@ module Espago
 
     private
     def enviroment
-      production ? "https://secure.espago.com/api" : "https://sandbox.espago.com/api"
+      production ? "https://edge.espago.com/api" : 'http://127.0.0.1:3007/api'
     end
 
     def api_version_header
