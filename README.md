@@ -14,7 +14,7 @@ or just add it to your Gemfile if you are running a Rails project
 
 ## Configuration
 
-After registering at <http://espago.com> configure your app with the security credentials. More information about configuration of merchant account you can find in our documentation <https://espago.com/doc/en>
+After registering at <http://espago.com> configure your app with the security credentials. More information about configuration of merchant account you can find in our documentation <https://developers.espago.com/en>
 
 The most standard way of configuring Espago is to do it globally on the Espago class.
 
