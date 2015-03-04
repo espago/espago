@@ -1,0 +1,15 @@
+= form_tag 'http://127.0.0.1:3007/api/masterpass',authenticity_token: false, id: :masterpass_espago_form do
+  = hidden_field_tag 'app_id', data[:app_id]
+  = hidden_field_tag 'session_id', data[:session_id]
+  = hidden_field_tag 'amount', data[:amount]
+  = hidden_field_tag 'currency', data[:currency]
+  = hidden_field_tag 'description', data[:description]
+  = hidden_field_tag 'api_version', data[:api_version]
+  = hidden_field_tag 'checksum',  data[:checksum]
+  - data[:shopping_cart_items].each_with_index do |shopping_cart_item,index|
+    = hidden_field_tag "shopping_cart_items[#{index}][description]",  shopping_cart_item[:description]
+    = hidden_field_tag "shopping_cart_items[#{index}][quantity]",  shopping_cart_item[:quantity]
+    = hidden_field_tag "shopping_cart_items[#{index}][value]",  shopping_cart_item[:value]
+    = hidden_field_tag "shopping_cart_items[#{index}][image_url]",  shopping_cart_item[:image_url]
+
+  = button_tag( t("activerecord.models.espago.buy"))
