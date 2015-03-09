@@ -1,5 +1,6 @@
 = form_tag 'http://127.0.0.1:3007/api/masterpass',authenticity_token: false, id: :masterpass_espago_form do
   = hidden_field_tag 'masterpass_action', data[:masterpass_action]
+  = hidden_field_tag 'long_access_token', data[:long_access_token]
   = hidden_field_tag 'app_id', data[:app_id]
   = hidden_field_tag 'session_id', data[:session_id]
   = hidden_field_tag 'amount', data[:amount]

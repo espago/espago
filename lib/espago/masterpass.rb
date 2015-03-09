@@ -16,10 +16,27 @@ module Espago
     end
 
     def self.prepare_form(data)
+      data[:masterpass_action] ||=  'checkout'
       data[:app_id] ||=  Espago.app_id
       data[:api_version] ||= Espago.api_version
       data[:checksum] = calculate_checksum(data[:app_id],data[:session_id],data[:amount],data[:currency],data[:checksum_key]|| Espago.checksum_key)
       data
     end
+
+    def self.prepare_pairing_form(data)
+      data[:masterpass_action] ||=  'pairing'
+      data[:app_id] ||=  Espago.app_id
+      data[:api_version] ||= Espago.api_version
+      data[:checksum] = calculate_checksum(data[:app_id],data[:session_id],data[:user_id],'',data[:checksum_key]|| Espago.checksum_key)
+      data
+    end
+    def self.prepare_precheckout_form(data)
+      data[:masterpass_action] ||=  'precheckout'
+      data[:app_id] ||=  Espago.app_id
+      data[:api_version] ||= Espago.api_version
+      data[:checksum] = calculate_checksum(data[:app_id],data[:session_id],data[:amount],data[:currency],data[:checksum_key]|| Espago.checksum_key)
+      data
+    end
+
   end
 end
