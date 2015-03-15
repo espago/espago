@@ -24,12 +24,11 @@ module Espago
 
     private
     def enviroment
-      'http://127.0.0.1:3007/api'
-      #production ? "https://secure.espago.com/api" : "https://edge.espago.com/api"
+      production ? "https://secure.espago.com/api" : "https://edge.espago.com/api"
     end
 
     def api_version_header
-      if @api_version.to_s == '3'
+      if @api_version.to_f.to_s == '3.0'
         {'Accept' => "application/vnd.espago.v3+json"}
       else
         {'Accept' => "application/vnd.espago.v2+json"}
