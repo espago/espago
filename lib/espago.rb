@@ -3,6 +3,7 @@ require "espago/client"
 require "espago/router"
 require "espago/back_request"
 require "espago/masterpass"
+require "espago/secure_web_page"
 require "espago/engine"
 require 'forwardable'
 
