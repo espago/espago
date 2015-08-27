@@ -1,0 +1,21 @@
+= form_tag '',authenticity_token: false, id: :masterpass_espago_form do
+  = hidden_field_tag 'masterpass_action', data[:masterpass_action]
+  = hidden_field_tag 'client_id', data[:client_id]
+  = hidden_field_tag 'app_id', data[:app_id]
+  = hidden_field_tag 'session_id', data[:session_id]
+  = hidden_field_tag 'amount', data[:amount]
+  = hidden_field_tag 'currency', data[:currency]
+  = hidden_field_tag 'description', data[:description]
+  = hidden_field_tag 'api_version', data[:api_version]
+  = hidden_field_tag 'checksum',  data[:checksum]
+  - data[:shopping_cart_items].each_with_index do |shopping_cart_item,index|
+    = hidden_field_tag "shopping_cart_items[#{index}][description]",  shopping_cart_item[:description]
+    = hidden_field_tag "shopping_cart_items[#{index}][quantity]",  shopping_cart_item[:quantity]
+    = hidden_field_tag "shopping_cart_items[#{index}][value]",  shopping_cart_item[:value]
+    = hidden_field_tag "shopping_cart_items[#{index}][image_url]",  shopping_cart_item[:image_url]
+
+  / .button
+  /   = button_tag( t("activerecord.models.espago.masterpass.buy"), style:'float:left')
+  #espagoloading{style:"display:none;float:left"}
+    %img{src:'https://sandbox.masterpass.com/lightbox/version90/Switch/assets/img/spinner.gif', style:'margin-left:10px;width:30px'}
+

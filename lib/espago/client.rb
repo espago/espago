@@ -3,11 +3,11 @@ require "espago/response"
 
 module Espago
   class Client
-    attr_accessor :public_key, :app_id, :app_password, :api_version, :production
+    attr_accessor :public_key, :app_id, :app_password, :api_version, :production, :checksum_key
     NotAuthenticated = Class.new(StandardError)
 
     def initialize(options = {})
-      @public_key, @app_id, @app_password, @api_version = options.values_at( :public_key, :app_id, :app_password, :api_version)
+      @public_key, @app_id, @app_password, @api_version, @checksum_key = options.values_at( :public_key, :app_id, :app_password, :api_version, :checksum_key)
       @connection = options[:connection] || ApiConnection
     end
 
@@ -24,11 +24,11 @@ module Espago
 
     private
     def enviroment
-      production ? "https://secure.espago.com/api" : "https://edge.espago.com/api"
+      production ? "https://secure.espago.com/api" : "https://sandbox.espago.com/api"
     end
 
     def api_version_header
-      if @api_version.to_s == '3'
+      if @api_version.to_f.to_s == '3.0'
         {'Accept' => "application/vnd.espago.v3+json"}
       else
         {'Accept' => "application/vnd.espago.v2+json"}
