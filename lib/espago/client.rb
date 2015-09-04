@@ -12,9 +12,15 @@ module Espago
     end
 
     def send_request(path, method, params = {})
-      raise NotAuthenticated unless valid?
-      connection = @connection.new(enviroment,api_version_header)
-      connection.authenticate(@app_id, @app_password)
+      
+      app_id = params[:app_id].present? ?  params.delete(:app_id) : @app_id
+      app_password = params[:app_password].present? ? params.delete(:app_password) : @app_password 
+      production_param = !params[:production].nil? ? params.delete(:production) : production 
+      
+      raise NotAuthenticated unless valid?(app_id, app_password)
+      
+      connection = @connection.new(enviroment(production_param),api_version_header)
+      connection.authenticate(app_id, app_password)
       connection.create(path, method, params)
     end
 
@@ -23,8 +29,8 @@ module Espago
     end
 
     private
-    def enviroment
-      production ? "https://secure.espago.com/api" : "https://sandbox.espago.com/api"
+    def enviroment(production_param)
+      production_param ? "https://secure.espago.com/api" : "https://sandbox.espago.com/api"
     end
 
     def api_version_header
@@ -35,9 +41,8 @@ module Espago
       end
     end
 
-
-    def valid?
-      @app_id && @app_password
+    def valid?(app_id, app_password)
+      app_id && app_password
     end
   end
 end
