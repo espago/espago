@@ -39,6 +39,7 @@ describe Espago::Client do
   end
 
   context "#send_request_with_app_id_and_password" do
+    subject { Espago::Client.new(connection: stubbed_api_connection, api_version: 2) }
     let(:method) { :get }
     let(:path) { :new_client }
     let(:params) { { name: "Jan Kowalski", app_id: 'app_id_test', app_password: 'secret'} }

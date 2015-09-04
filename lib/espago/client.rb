@@ -13,8 +13,7 @@ module Espago
 
     def send_request(path, method, params = {})
       @app_id = params[:app_id].present? ?  params.delete(:app_id) : @app_id
-      @app_password = params[:app_password].present? ? params.delete(:app_password) : @app_password
-      
+      @app_password = params[:app_password].present? ? params.delete(:app_password) : @app_password 
       raise NotAuthenticated unless valid?
       connection = @connection.new(enviroment,api_version_header)
       connection.authenticate(@app_id, @app_password)
