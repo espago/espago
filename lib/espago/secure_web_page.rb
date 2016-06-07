@@ -16,6 +16,7 @@ module Espago
       data[:ts] ||=  Time.now.to_i
       data[:app_id] ||=  Espago.app_id
       data[:api_version] ||= Espago.api_version
+      data[:amount] = format('%.2f', data[:amount])
       data[:checksum] = calculate_checksum(data[:app_id],data[:kind],data[:session_id],data[:amount],data[:currency],data[:ts],data[:checksum_key]|| Espago.checksum_key)
       data
     end
