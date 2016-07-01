@@ -22,7 +22,7 @@ The most standard way of configuring Espago is to do it globally on the Espago c
     Espago.app_password = 'your-espago-secret'
     Espago.public_key = 'your-espago-key'
     Espago.production = false #sets Espago enviroment to sandbox
-    Espago.api_version = 2
+    Espago.api_version = 3
 
 ## Sending request
 
@@ -117,24 +117,24 @@ Now if you want get customer's e-mail(or anoher field in 1st level of response) 
   <th>Parameter</th><th>Description</th><th>Documentation link</th>
 </tr>
 <tr>
-  <th>tokens</th><td>special id for credit card</td><td>https://developers.espago.com/en/v2#44-card-tokens</td>
+  <th>tokens</th><td>special id for credit card</td><td>https://developers.espago.com/en/v3#244-card-tokens</td>
 </tr>
 <tr>
-  <th>clients</th><td>clients data</td><td>https://developers.espago.com/en/v2#55-customers</td>
+  <th>clients</th><td>clients data</td><td>https://developers.espago.com/en/v3#255-customers</td>
 </tr>
 <tr>
-  <th>charges</th><td>credit payments</td><td>https://developers.espago.com/en/v2#9-card-payments</td>
+  <th>charges</th><td>credit payments</td><td>https://developers.espago.com/en/v3#209-card-payments</td>
 </tr>
 <tr>
-  <th>plans</th><td>plans for recurring payments</td><td>https://developers.espago.com/en/v2#22-plans</td>
+  <th>plans</th><td>plans for recurring payments</td><td>https://developers.espago.com/en/v3#222-plans</td>
 </tr>
 <tr>
-  <th>subscriptions</th><td>recurring payments for client according to the created plan</td><td>https://developers.espago.com/en/v2#28-subscriptions</td>
+  <th>subscriptions</th><td>recurring payments for client according to the created plan</td><td>https://developers.espago.com/en/v3#228-subscriptions</td>
 </tr>
 <tr>
-  <th>invoices</th><td>single recurring payment</td><td>https://developers.espago.com/en/v2#34-invoices</td>
+  <th>invoices</th><td>single recurring payment</td><td>https://developers.espago.com/en/v3#234-invoices</td>
 </tr>
 <tr>
-  <th>line_items</th><td>element of every invoice</td><td>https://developers.espago.com/en/v2#41-getting-informations-about-line-items-of-invoice</td>
+  <th>line_items</th><td>element of every invoice</td><td>https://developers.espago.com/en/v3#241-getting-informations-about-line-items-of-invoice</td>
 </tr>
 </table>
