@@ -5,7 +5,9 @@ module Espago
     end
 
     def self.calculate_checksum(app_id, session_id,amount,currency,checksum_key)
-      Digest::MD5.hexdigest(app_id.to_s + session_id.to_s + amount.to_s + currency.to_s + checksum_key.to_s)
+      Digest::MD5.hexdigest(
+        [app_id.to_s, session_id.to_s, amount.to_s, currency.to_s, checksum_key.to_s].join('|')
+      )
     end
 
     def self.masterpass_post(api_v=nil)
