@@ -4,11 +4,14 @@ module Espago
     attr_accessor :production
 
     def self.calculate_checksum(app_id, kind, session_id,amount,currency,ts,checksum_key)
-      Digest::MD5.hexdigest(app_id.to_s + kind +session_id.to_s + amount.to_s + currency.to_s + ts.to_s + checksum_key.to_s)
+      Digest::MD5.hexdigest(
+        [app_id.to_s, kind, session_id.to_s, amount.to_s, currency.to_s, ts.to_s, checksum_key.to_s].join('|')
+      )
     end
 
     def self.form_post(api_v=nil)
-      Espago.production ? "https://secure.espago.com/secure_web_page" : "https://sandbox.espago.com/secure_web_page"
+      "http://127.0.0.1:3007/secure_web_page"
+      #Espago.production ? "https://secure.espago.com/secure_web_page" : "https://sandbox.espago.com/secure_web_page"
     end
 
     def self.prepare_form(data)
