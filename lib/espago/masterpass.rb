@@ -21,6 +21,7 @@ module Espago
       data[:masterpass_action] ||=  'checkout'
       data[:app_id] ||=  Espago.app_id
       data[:api_version] ||= Espago.api_version
+      data[:amount] = format('%.2f', data[:amount])
       data[:checksum] = calculate_checksum(data[:app_id],data[:session_id],data[:amount],data[:currency],data[:checksum_key]|| Espago.checksum_key)
       data
     end
@@ -36,6 +37,7 @@ module Espago
       data[:masterpass_action] ||=  'precheckout'
       data[:app_id] ||=  Espago.app_id
       data[:api_version] ||= Espago.api_version
+      data[:amount] = format('%.2f', data[:amount])
       data[:checksum] = calculate_checksum(data[:app_id],data[:session_id],data[:amount],data[:currency],data[:checksum_key]|| Espago.checksum_key)
       data
     end
