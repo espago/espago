@@ -1,0 +1,10 @@
+===============================================================================
+
+You need to do some manual setup to get Espago working:
+
+1.  Review settings in new config/initializers/espago.rb and update where
+    neccessary.
+
+2.  Restart app
+
+===============================================================================

@@ -38,6 +38,18 @@ describe Espago::Client do
     end
   end
 
+  context "#send_request_with_app_id_and_password" do
+    subject { Espago::Client.new(connection: stubbed_api_connection, api_version: 2) }
+    let(:method) { :get }
+    let(:path) { :new_client }
+    let(:params) { { name: "Jan Kowalski", app_id: 'app_id_test', app_password: 'secret'} }
+
+    it "should create an api request" do
+      subject.send_request(path, method, params).should eq('returned api data')
+    end
+
+  end
+
   context "#parse_response" do
     subject { Espago::Client.new }
 
