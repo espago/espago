@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    espago (0.1.2)
+    espago (0.1.8)
       facets
       faraday
       rails

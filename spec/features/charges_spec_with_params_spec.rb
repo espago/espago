@@ -11,7 +11,6 @@ describe 'Espago.charges_with_params' do
   end
   
   it "should get list of charges" do
-    puts "\n\n\n\n\nshould get list of charges"
     VCR.use_cassette('charges get') do
       response = Espago.charges :get,{app_id: 'app_id_test', app_password: 'app_password_test', production: false}
       response.count.should eq(589)
