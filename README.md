@@ -31,9 +31,9 @@ The first possibility is to call everytime send_request() function with proper p
 
     Espago.send_request path, request_type, [parameters]
 
-Here it is an example of using this way to create new client:
+Here it is an example of using this way to create new client (read how to created token_id at https://github.com/espago/espago-1.2.js-demo) :
 
-    Espago.send_request :clients, :post, {description: "Jan Kowalski", email: "kowalski@example.com", card: {first_name: "Jan", last_name: "Kowalski", number: "4242424242424242", year: "2019", month: "03"}}
+    Espago.send_request :clients, :post, {description: "Jan Kowalski", email: "kowalski@example.com", card: 'token_id'}
 
 The second possible way to sending requests by Espago gem is to call the proper path on Espago object, using specific HTTP method and setting chosen parameteres.
 
@@ -41,7 +41,7 @@ The second possible way to sending requests by Espago gem is to call the proper 
 
 Below, it is an example of using this possibility to create new client:
 
-    Espago.clients :post, {description: "Jan Kowalski", email: "kowalski@example.com", card: {first_name: "Jan", last_name: "Kowalski", number: "4242424242424242", year: "2019", month: "03"}}
+    Espago.clients :post, {description: "Jan Kowalski", email: "kowalski@example.com", card: 'token_id'}
 
 ## Getting response
 
@@ -49,7 +49,7 @@ Every returned object includes informations about header and body of response.
 
 For example for request:
 
-    client = Espago.clients :post, {description: "Jan Kowalski", email: "kowalski@example.com", card: {first_name: "Jan", last_name: "Kowalski", number: "4242424242424242", year: "2019", month: "03"}}
+    client = Espago.clients :post, {description: "Jan Kowalski", email: "kowalski@example.com", card: 'token_id'}
 
 Espago returns an special response object:
 
