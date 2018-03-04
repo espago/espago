@@ -10,7 +10,7 @@ module Espago
     end
 
     def self.form_post(api_v=nil)
-      Espago.production ? "https://secure.espago.com/secure_web_page" : "https://sandbox.espago.com/secure_web_page"
+      Espago.production ? "https://secure.espago.com/secure_web_page" : "https://edge.espago.com/secure_web_page"
     end
 
     def self.prepare_form(data)
