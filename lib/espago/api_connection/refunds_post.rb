@@ -1,6 +1,6 @@
 module Espago
   class ApiConnection
-    class RefundsPost < Api
+    class RefundsPost < ApiPost
       def request(params = {})
         super("refunds", params)
       end
