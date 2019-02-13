@@ -1,10 +1,21 @@
 language: ruby
 rvm:
-  - "2.1.10"
-  - "2.2.5"
-  - "2.3.1"
+  - "2.3.8"
+  - "2.4.5"
+  - "2.5.3"
+  - "2.6.1"
 
-addons:
-  code_climate:
-    repo_token:
-      secure: 6c7689ce08533f243c6949aabf49abada63dc24f5e1bf5c4a6dfdb20080b95fa
+env:
+  global:
+    - CC_TEST_REPORTER_ID=6c7689ce08533f243c6949aabf49abada63dc24f5e1bf5c4a6dfdb20080b95fa
+language: ruby
+rvm:
+  - 2.2.0
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - bundle exec rspec
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
