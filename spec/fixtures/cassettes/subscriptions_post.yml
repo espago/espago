@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/subscriptions
+    uri: https://sandbox.espago.com/api/subscriptions
     body:
       encoding: US-ASCII
       string: plan=pl_12345&client=cli_90Pi6Jf0ndl_PP

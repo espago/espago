@@ -22,14 +22,14 @@ describe Espago::Router do
 
   context "#path_exists?" do
     it "should return if path exists" do
-      subject.path_exists?.should be_true
+      subject.path_exists?.should be true
     end
 
     context "with invalid path name" do
       subject { Espago::Router.new(:not, :existing) }
 
       it "should return false" do
-        subject.path_exists?.should_not be_true
+        subject.path_exists?.should_not be true
       end
     end
   end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/charges/pay_mTOngouLTJWZ0w
+    uri: https://sandbox.espago.com/api/charges/pay_mTOngouLTJWZ0w
     body:
       encoding: US-ASCII
       string: ''

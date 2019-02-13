@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/clients/cli_w0Se2smYwyQ0Uw
+    uri: https://sandbox.espago.com/api/clients/cli_w0Se2smYwyQ0Uw
     body:
       encoding: US-ASCII
       string: client_id=cli_w0Se2smYwyQ0Uw&card%5Bfirst_name%5D=Jan&card%5Blast_name%5D=Kowalski&card%5Bnumber%5D=4242424242424242&card%5Bverification_value%5D=123&card%5Byear%5D=2015&card%5Bmonth%5D=2

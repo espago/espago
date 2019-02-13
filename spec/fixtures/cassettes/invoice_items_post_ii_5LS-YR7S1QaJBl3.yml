@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/invoice_items
+    uri: https://sandbox.espago.com/api/invoice_items
     body:
       encoding: US-ASCII
       string: amount=49.99&currency=pln&date=1417126942&description=Test+invoice+items&client=cli_90Pi6Jf0ndl_PP

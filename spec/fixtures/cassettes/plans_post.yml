@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/plans
+    uri: https://sandbox.espago.com/api/plans
     body:
       encoding: US-ASCII
       string: period_unit=day&period=14&amount=49.99&currency=pln&description=Test+Plan

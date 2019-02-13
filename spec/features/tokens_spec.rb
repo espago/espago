@@ -14,7 +14,7 @@ describe 'Espago.tokens' do
           month:'2'
         },
       }
-      response.status.should eq(201)
+      expect(response.status).to eq(201)
       response.id.should_not eq(nil)
       response.used.should eq(false)
       response.created_at.should eq Time.at(1417029320)
@@ -27,7 +27,7 @@ describe 'Espago.tokens' do
     it "should get token params" do
     VCR.use_cassette('tokens get') do
       response = Espago.tokens :get, {token_id: 'cc_166YDMhrVcemFb3'}
-      response.status.should eq(200)
+      expect(response.status).to eq(200)
       response.id.should eq('cc_166YDMhrVcemFb3')
       response.used.should eq(false)
       response.created_at.should eq Time.at(1417029320)
