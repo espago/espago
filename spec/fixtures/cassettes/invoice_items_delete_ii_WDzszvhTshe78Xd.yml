@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/invoice_items/ii_WDzszvhTshe78Xd
+    uri: https://sandbox.espago.com/api/invoice_items/ii_WDzszvhTshe78Xd
     body:
       encoding: US-ASCII
       string: ''

@@ -35,7 +35,7 @@ describe 'Espago.subscriptions' do
   it "should get info after deleted subscription" do
     VCR.use_cassette('subscriptions delete sub_8yYuCBKdywr7e2') do
       response = Espago.subscriptions :delete,{subscription_id:'sub_8yYuCBKdywr7e2'}
-      response.status.should eq(204)
+      expect(response.status).to eq(204)
     end
   end
 

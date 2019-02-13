@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/charges/pay_lQGyIon5qG59O5/refund
+    uri: https://sandbox.espago.com/api/charges/pay_lQGyIon5qG59O5/refund
     body:
       encoding: US-ASCII
       string: charge_id=pay_lQGyIon5qG59O5
