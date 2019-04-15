@@ -13,6 +13,7 @@ CodeClimate::TestReporter.start
 require 'webmock/rspec'
 require 'vcr'
 require './lib/espago'
+require 'byebug'
 
 VCR.configure do |c|
   c.default_cassette_options = {:record => :once, :serialize_with => :yaml}
@@ -35,7 +36,7 @@ RSpec.configure do |config|
     Espago.app_password = 'app_password_test'
     Espago.public_key = 'app_public_key_test'
     Espago.production = false
-    Espago.api_version = '2'
+    Espago.api_version = '3'
   end
 
 

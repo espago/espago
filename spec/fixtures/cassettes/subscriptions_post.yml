@@ -2,13 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/subscriptions
+    uri: https://sandbox.espago.com/api/subscriptions
     body:
       encoding: US-ASCII
       string: plan=pl_12345&client=cli_90Pi6Jf0ndl_PP
     headers:
       Accept:
       - application/vnd.espago.v2+json
+      Authorization:
+      - Basic YXBwX2lkX3Rlc3Q6YXBwX3Bhc3N3b3JkX3Rlc3Q=
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
