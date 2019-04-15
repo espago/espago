@@ -1,3 +1,4 @@
+before_install: gem install bundler
 env:
   global:
     - CC_TEST_REPORTER_ID=6c7689ce08533f243c6949aabf49abada63dc24f5e1bf5c4a6dfdb20080b95fa
