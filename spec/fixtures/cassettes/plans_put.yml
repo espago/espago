@@ -2,13 +2,15 @@
 http_interactions:
 - request:
     method: put
-    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/plans/pl_XczKHr_42CRiKXZ
+    uri: https://sandbox.espago.com/api/plans/pl_XczKHr_42CRiKXZ
     body:
       encoding: US-ASCII
       string: plan_id=pl_XczKHr_42CRiKXZ&period_unit=month&period=1&amount=149.99&currency=pln&description=Test+Plan
     headers:
       Accept:
       - application/vnd.espago.v2+json
+      Authorization:
+      - Basic YXBwX2lkX3Rlc3Q6YXBwX3Bhc3N3b3JkX3Rlc3Q=
       Content-Type:
       - application/x-www-form-urlencoded
       Accept-Encoding:
