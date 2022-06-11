@@ -19,7 +19,7 @@ describe Espago::BackRequest do
      "created_at"=>1417030497
      }
   }
-  it "should be success" do
+  it {
     expect(subject.id).to eq("in_tUCMhwlg2nkvAaL")
     expect(subject.subscription).to eq("sub_8yYuCBKdywr7e2")
     expect(subject.amount).to eq("123.45")
@@ -29,5 +29,5 @@ describe Espago::BackRequest do
     expect(subject.created_at).to eq(Time.at(1417030497))
     expect(subject.card).to eq({})
     expect(subject.imaginated_attribute).to be_nil
-  end
+  }
 end

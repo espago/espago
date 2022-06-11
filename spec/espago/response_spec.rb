@@ -25,7 +25,7 @@ describe Espago::Response do
       }
     }.to_json)
   }
-  it "should be success" do
+  it {
     expect(subject.id).to eq("pay_hViT20SOWaUL_w")
     expect(subject.description).to eq("Zakupy z example.com")
     expect(subject.amount).to eq("49.99")
@@ -34,5 +34,5 @@ describe Espago::Response do
     expect(subject.client).to eq("cli_wm7dGQltAqIfH8")
     expect(subject.created_at).to eq(Time.parse("2013-06-28 10:31:14 +0200"))
     expect(subject.imaginated_attribute).to be_nil
-  end
+  }
 end
