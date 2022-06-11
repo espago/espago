@@ -25,14 +25,14 @@ describe Espago::Response do
       }
     }.to_json)
   }
-
-  its(:id) { should eq("pay_hViT20SOWaUL_w") }
-  its(:description) { should eq("Zakupy z example.com") }
-  its(:amount) { should eq("49.99") }
-  its(:currency) { should eq("pln") }
-  its(:state) { should eq("executed") }
-  its(:client) { should eq("cli_wm7dGQltAqIfH8") }
-  its(:created_at) { should eq(Time.parse("2013-06-28 10:31:14 +0200")) }
-  its(:imaginated_attribute) { should be_nil }
-
+  it "should be success" do
+    expect(subject.id).to eq("pay_hViT20SOWaUL_w")
+    expect(subject.description).to eq("Zakupy z example.com")
+    expect(subject.amount).to eq("49.99")
+    expect(subject.currency).to eq("pln")
+    expect(subject.state).to eq("executed")
+    expect(subject.client).to eq("cli_wm7dGQltAqIfH8")
+    expect(subject.created_at).to eq(Time.parse("2013-06-28 10:31:14 +0200"))
+    expect(subject.imaginated_attribute).to be_nil
+  end
 end

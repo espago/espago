@@ -15,10 +15,10 @@ describe Espago::Client do
   let(:stubbed_api_connection) { StubbedApiConnection }
   let(:response) { FakeResponse.new(200, {id: 1, status: "2012"}.to_json) }
 
-  it { subject.should respond_to :app_id }
-  it { subject.should respond_to :app_password }
-  it { subject.should respond_to :public_key }
-  it { subject.should respond_to :api_version }
+  it { expect(subject).to respond_to :app_id }
+  it { expect(subject).to respond_to :app_password }
+  it { expect(subject).to respond_to :public_key }
+  it { expect(subject).to respond_to :api_version }
 
   context "#send_request" do
     let(:method) { :get }
@@ -26,7 +26,7 @@ describe Espago::Client do
     let(:params) { { name: "Jan Kowalski"} }
 
     it "should create an api request" do
-      subject.send_request(path, method, params).should eq('returned api data')
+      expect(subject.send_request(path, method, params)).to eq('returned api data')
     end
 
     context "with no credentials" do
@@ -45,7 +45,7 @@ describe Espago::Client do
     let(:params) { { name: "Jan Kowalski", app_id: 'app_id_test', app_password: 'secret'} }
 
     it "should create an api request" do
-      subject.send_request(path, method, params).should eq('returned api data')
+      expect(subject.send_request(path, method, params)).to eq('returned api data')
     end
 
   end
@@ -54,12 +54,12 @@ describe Espago::Client do
     subject { Espago::Client.new }
 
     it "should delegate work to parser" do
-      Espago::Response.should_receive(:new).with(response)
+      expect(Espago::Response).to receive(:new).with(response)
       subject.parse_response(response)
     end
 
     it "should parse response into object" do
-      subject.parse_response(response).class.should eq(Espago::Response)
+      expect(subject.parse_response(response).class).to eq(Espago::Response)
     end
   end
 

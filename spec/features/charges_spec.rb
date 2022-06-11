@@ -7,20 +7,20 @@ describe 'Espago.charges' do
   it "should get list of charges" do
     VCR.use_cassette('charges get') do
       response = Espago.charges :get
-      response.count.should eq(589)
+      expect(response.count).to eq(589)
     end
   end
 
   it "should get info abount charges" do
     VCR.use_cassette('charges get pay_mTOngouLTJWZ0w') do
       response = Espago.charges :get,{charge_id:'pay_mTOngouLTJWZ0w'}
-      response.status.should eq(200)
-      response.channel.should eq('elavon')
-      response.state.should eq('executed')
-      response.currency.should eq('PLN')
-      response.description.should eq('Test12345')
-      response.client.should eq('cli_YM5tKz6-IfhN7T')
-      response.created_at.should eq Time.at(1416917311)
+      expect(response.status).to eq(200)
+      expect(response.channel).to eq('elavon')
+      expect(response.state).to eq('executed')
+      expect(response.currency).to eq('PLN')
+      expect(response.description).to eq('Test12345')
+      expect(response.client).to eq('cli_YM5tKz6-IfhN7T')
+      expect(response.created_at).to eq Time.at(1416917311)
     end
   end
 
@@ -38,41 +38,41 @@ describe 'Espago.charges' do
                                            month:'2'
                                          },
                                          }
-      response.status.should eq(201)
-      response.channel.should eq('elavon')
-      response.state.should eq('executed')
-      response.currency.should eq('PLN')
-      response.description.should eq('Test12345')
-      response.client.should eq('cli_YM5tKz6-IfhN7T')
-      response.created_at.should eq Time.at(1416917311)
+      expect(response.status).to eq(201)
+      expect(response.channel).to eq('elavon')
+      expect(response.state).to eq('executed')
+      expect(response.currency).to eq('PLN')
+      expect(response.description).to eq('Test12345')
+      expect(response.client).to eq('cli_YM5tKz6-IfhN7T')
+      expect(response.created_at).to eq Time.at(1416917311)
     end
   end
 
   it "should get 204 status after destroy charge" do
     VCR.use_cassette('charges destroy') do
       response = Espago.charges :delete,{charge_id:'pay_kQmS_3RTfm4eix'}
-      response.state.should eq('reversed')
+      expect(response.state).to eq('reversed')
     end
   end
 
   it "should get refunded status after refund charge" do
     VCR.use_cassette('charges refund') do
       response = Espago.charges_refund :post,{charge_id:'pay_lQGyIon5qG59O5'}
-      response.state.should eq('refunded')
+      expect(response.state).to eq('refunded')
     end
   end
 
   it "should get params from complete charge" do
     VCR.use_cassette('charges complete') do
       response = Espago.charges_complete :post,{charge_id:'pay_kQmS_3RTfm4eix'}
-      response.state.should eq('executed')
+      expect(response.state).to eq('executed')
     end
   end
 
   it "should get params from complete charge (deprecated)" do
     VCR.use_cassette('charges complete deprecation') do
       response = Espago.complete :post,{charge_id:'pay_Wmu3hmXJIG4jsg'}
-      response.state.should eq('executed')
+      expect(response.state).to eq('executed')
     end
   end
 

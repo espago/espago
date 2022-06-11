@@ -10,7 +10,8 @@ describe Espago::Error do
   let(:response) {
     FakeResponse.new(422, response_body)
   }
-
-  its(:body) { should eq('body') }
-  its(:status) { should eq(422) }
+  it "should be success" do
+    expect(subject.body).to eq('body')
+    expect(subject.status).to eq(422)
+  end
 end

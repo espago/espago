@@ -19,15 +19,15 @@ describe Espago::BackRequest do
      "created_at"=>1417030497
      }
   }
-
-  its(:id) { should eq("in_tUCMhwlg2nkvAaL") }
-  its(:subscription) { should eq("sub_8yYuCBKdywr7e2") }
-  its(:amount) { should eq("123.45") }
-  its(:currency) { should eq("pln") }
-  its(:paid) { should eq("true") }
-  its(:client) { should eq("cli_90Pi6Jf0ndl_PP") }
-  its(:created_at) { should eq(Time.at(1417030497)) }
-  its(:card) { should eq({}) }
-  its(:imaginated_attribute) { should be_nil }
-
+  it "should be success" do
+    expect(subject.id).to eq("in_tUCMhwlg2nkvAaL")
+    expect(subject.subscription).to eq("sub_8yYuCBKdywr7e2")
+    expect(subject.amount).to eq("123.45")
+    expect(subject.currency).to eq("pln")
+    expect(subject.paid).to eq("true")
+    expect(subject.client).to eq("cli_90Pi6Jf0ndl_PP")
+    expect(subject.created_at).to eq(Time.at(1417030497))
+    expect(subject.card).to eq({})
+    expect(subject.imaginated_attribute).to be_nil
+  end
 end
