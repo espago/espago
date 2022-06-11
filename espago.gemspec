@@ -17,11 +17,12 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency "faraday"
+  gem.add_dependency "faraday", '>= 2.0.0'
+  gem.add_dependency "json", '>= 2.3.1'
   gem.add_dependency "facets"
   gem.add_dependency "rails"
 
-  gem.add_development_dependency "rspec"
+  gem.add_development_dependency "rspec", '>= 3.11.0'
   gem.add_development_dependency "byebug"
   gem.add_development_dependency "pry"
   gem.add_development_dependency "guard-rspec"
@@ -31,7 +32,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rb-fsevent', '~> 0.9.1'
   gem.add_development_dependency 'webmock'
   gem.add_development_dependency 'vcr'
-  gem.add_development_dependency 'codeclimate-test-reporter'
-
-
+  # gem.add_development_dependency 'codeclimate-test-reporter'
 end
