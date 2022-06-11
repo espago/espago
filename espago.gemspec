@@ -32,5 +32,4 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rb-fsevent', '~> 0.9.1'
   gem.add_development_dependency 'webmock'
   gem.add_development_dependency 'vcr'
-  # gem.add_development_dependency 'codeclimate-test-reporter'
 end
