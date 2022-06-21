@@ -6,7 +6,7 @@ describe 'Two api headers test' do
     Espago.api_version = '2'
     VCR.use_cassette('api 2') do
       response = Espago.charges :get
-      response.count.should eq(596)
+      expect(response.count).to eq(596)
     end
   end
 
@@ -14,7 +14,7 @@ describe 'Two api headers test' do
     Espago.api_version = '3'
     VCR.use_cassette('api 3') do
       response = Espago.charges :get
-      response.count.should eq(596)
+      expect(response.count).to eq(596)
     end
   end
 

@@ -27,7 +27,7 @@ describe Espago::ApiConnection do
 
   context "#create" do
     it "returns response" do
-      subject.create(:path, :stubbed).should be_a_kind_of Espago::Response
+      expect(subject.create(:path, :stubbed)).to be_a_kind_of Espago::Response
     end
     it "raises auth error" do
       expect { subject.create(:path, :unauthorized) }.to raise_error Espago::AuthenticationError

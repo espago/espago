@@ -6,12 +6,12 @@ class Espago::ApiConnection::StubbedRequestGet; end
 describe Espago::Router do
   subject { Espago::Router.new(:stubbed_request, :get) }
 
-  it { subject.should respond_to :path}
-  it { subject.should respond_to :method}
+  it { expect(subject).to respond_to :path}
+  it { expect(subject).to respond_to :method}
 
   context "#route" do
     it "should get a class name depending on path and method" do
-      subject.route.should eq( Espago::ApiConnection::StubbedRequestGet )
+      expect(subject.route).to eq( Espago::ApiConnection::StubbedRequestGet )
     end
 
     it "should raise error if class not found" do
@@ -22,14 +22,14 @@ describe Espago::Router do
 
   context "#path_exists?" do
     it "should return if path exists" do
-      subject.path_exists?.should be_true
+      expect(subject.path_exists?).to be_truthy
     end
 
     context "with invalid path name" do
       subject { Espago::Router.new(:not, :existing) }
 
       it "should return false" do
-        subject.path_exists?.should_not be_true
+        expect(subject.path_exists?).not_to be_truthy
       end
     end
   end

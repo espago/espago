@@ -2,13 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/clients/cli_w0Se2smYwyQ0Uw/authorize
+    uri: https://sandbox.espago.com/api/clients/cli_w0Se2smYwyQ0Uw/authorize
     body:
       encoding: UTF-8
       string: ''
     headers:
       Accept:
       - application/vnd.espago.v2+json
+      Authorization:
+      - Basic YXBwX2lkX3Rlc3Q6YXBwX3Bhc3N3b3JkX3Rlc3Q=
       Content-Length:
       - '0'
       Accept-Encoding:

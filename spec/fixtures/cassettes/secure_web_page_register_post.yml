@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.espago.com/api/secure_web_page_register
+    body:
+      encoding: UTF-8
+      string: amount=49.99&currency=PLN&description=Test12345&client_description=Jan+Kowalski&kind=sale
+    headers:
+      Accept:
+      - application/vnd.espago.v3+json
+      Authorization:
+      - Basic YXBwX2lkX3Rlc3Q6YXBwX3Bhc3N3b3JkX3Rlc3Q=
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: 'Created '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Meta-Request-Version:
+      - 0.2.9
+      Etag:
+      - W/"c32d4faa6245c966283caad9e1088455"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a9b96384-cf27-49a6-b685-6f2f77689f5d
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.4.6/2019-04-01)
+      Date:
+      - Mon, 15 Apr 2019 16:03:09 GMT
+      Content-Length:
+      - '227'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - _session_id=93a8bdfcb34dc876573281a240c04d43; path=/; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"id":"pay_770swCpLvm5dzrqk","description":"Test12345","amount":"49.99","currency":"PLN","state":"new","created_at":1555344189,"transaction_id":"tr_770J9n7gw","redirect_url":"http://127.0.0.1:3000/secure_web_page/tr_770J9n7gw"}'
+    http_version:
+  recorded_at: Mon, 15 Apr 2019 16:03:09 GMT
+recorded_with: VCR 2.9.3

@@ -2,13 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: https://app_id_test:app_password_test@sandbox.espago.com/api/plans
+    uri: https://sandbox.espago.com/api/plans
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
       - application/vnd.espago.v2+json
+      Authorization:
+      - Basic YXBwX2lkX3Rlc3Q6YXBwX3Bhc3N3b3JkX3Rlc3Q=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:

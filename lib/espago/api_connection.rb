@@ -22,8 +22,6 @@ end
 
 module Espago
   class ApiConnection
-    extend Forwardable
-    def_delegator :@connection, :basic_auth, :authenticate
 
     def initialize(enviroment,headers)
       @connection = Faraday.new(enviroment)
@@ -36,6 +34,10 @@ module Espago
       response = route.new(@connection).request(params)
 
       handle_response response
+    end
+
+    def authenticate(username, password)
+      @connection.request(:authorization, :basic, username, password)
     end
 
     private
