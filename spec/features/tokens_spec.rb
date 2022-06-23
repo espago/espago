@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe 'Espago.tokens' do
 
@@ -15,12 +15,12 @@ describe 'Espago.tokens' do
         },
       }
       expect(response.status).to eq(201)
-      response.id.should_not eq(nil)
-      response.used.should eq(false)
-      response.created_at.should eq Time.at(1417029320)
-      response.card['company'].should eq('VI')
-      response.card['last4'].should eq('4242')
-      response.card['authorized'].should eq(nil)
+      expect(response.id).to_not eq(nil)
+      expect(response.used).to eq(false)
+      expect(response.created_at).to eq Time.at(1417029320)
+      expect(response.card['company']).to eq('VI')
+      expect(response.card['last4']).to eq('4242')
+      expect(response.card['authorized']).to eq(nil)
     end
   end
 
@@ -28,13 +28,12 @@ describe 'Espago.tokens' do
     VCR.use_cassette('tokens get') do
       response = Espago.tokens :get, {token_id: 'cc_166YDMhrVcemFb3'}
       expect(response.status).to eq(200)
-      response.id.should eq('cc_166YDMhrVcemFb3')
-      response.used.should eq(false)
-      response.created_at.should eq Time.at(1417029320)
-      response.card['company'].should eq('VI')
-      response.card['last4'].should eq('4242')
-      response.card['authorized'].should eq(nil)
+      expect(response.id).to eq('cc_166YDMhrVcemFb3')
+      expect(response.used).to eq(false)
+      expect(response.created_at).to eq Time.at(1417029320)
+      expect(response.card['company']).to eq('VI')
+      expect(response.card['last4']).to eq('4242')
+      expect(response.card['authorized']).to eq(nil)
     end
   end
-
 end

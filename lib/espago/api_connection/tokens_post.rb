@@ -3,7 +3,7 @@ module Espago
     class TokensPost < ApiPost
       def initialize(connection)
         @connection = connection
-        @connection.basic_auth(Espago.public_key, '')
+        @connection.request(:authorization, :basic, Espago.public_key, '')
       end
 
       def request(params = {})

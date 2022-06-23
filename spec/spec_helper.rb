@@ -17,7 +17,6 @@ VCR.configure do |c|
   c.default_cassette_options = {:record => :once, :serialize_with => :yaml}
   c.cassette_library_dir = 'spec/fixtures/cassettes'
   c.hook_into :webmock
-  c.ignore_hosts 'codeclimate.com'
 end
 #WebMock.allow_net_connect!
 #VCR.turn_off!(:ignore_cassettes => false)

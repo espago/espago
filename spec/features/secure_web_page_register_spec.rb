@@ -12,12 +12,12 @@ describe 'Espago.secure_web_page_register' do
                                                  description: 'Test12345',
                                                  client_description: 'Jan Kowalski',
                                                  kind: 'sale'
-      response.status.should eq(201)
-      response.state.should eq('new')
-      response.currency.should eq('PLN')
-      response.description.should eq('Test12345')
-      response.id.should eq('pay_770swCpLvm5dzrqk')
-      response.created_at.should eq Time.at(1_555_344_189)
+      expect(response.status).to eq(201)
+      expect(response.state).to eq('new')
+      expect(response.currency).to eq('PLN')
+      expect(response.description).to eq('Test12345')
+      expect(response.id).to eq('pay_770swCpLvm5dzrqk')
+      expect(response.created_at).to eq Time.at(1_555_344_189)
     end
   end
 end
