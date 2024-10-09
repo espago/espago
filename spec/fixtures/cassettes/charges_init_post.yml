@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.espago.com/api/charges/init
+    body:
+      encoding: UTF-8
+      string: amount=49.99&card%5Bfirst_name%5D=Jan&card%5Blast_name%5D=Kowalski&card%5Bmonth%5D=2&card%5Bnumber%5D=4242424242424242&card%5Bverification_value%5D=123&card%5Byear%5D=2015&currency=PLN&description=Test12345
+    headers:
+      Accept:
+      - application/vnd.espago.v3+json
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 09 Oct 2024 08:26:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Etag:
+      - W/"afa8705161a34d3c38548c8597267636"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'; base-uri 'none'; block-all-mixed-content; child-src 'self'
+        sandbox-static.espago.com; connect-src 'self' sandbox-static.espago.com; font-src
+        'self' sandbox-static.espago.com; form-action 'self' sandbox-static.espago.com;
+        img-src 'self' sandbox-static.espago.com; manifest-src 'none'; media-src 'none';
+        object-src 'none'; script-src 'self' sandbox-static.espago.com; style-src
+        'self' sandbox-static.espago.com; upgrade-insecure-requests; worker-src 'none';
+        report-uri https://csp-report.espago.com/csp_app0_sandbox/store
+      X-Frame-Options:
+      - SAMEORIGIN
+    body:
+      encoding: UTF-8
+      string: '{"id":"pay_96aTW2otjImiHhCd","description":"Test12345","channel":"elavon","amount":"49.99","currency":"PLN","state":"new","client":"cli_96acHmkHkj36w3Xk","transaction_id":"tr_96aaqaYyD","created_at":1728462384,"payment_token":"86ba284f-3ad6-4b50-94c0-be3377a6f6c5"}'
+  recorded_at: Wed, 09 Oct 2024 08:26:24 GMT
+recorded_with: VCR 6.1.0
