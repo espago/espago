@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.name          = 'espago'
   gem.version       = Espago::VERSION
 
-  gem.required_ruby_version = '>= 3.0.0'
+  gem.required_ruby_version = '>= 3.1.0'
 
   gem.authors       = ["Piotrek", "Szymon Fiedler","Waclaw Luczak", "faramund"]
   gem.email         = ["developers@espago.com"]
