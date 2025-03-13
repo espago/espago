@@ -4,21 +4,9 @@ require "forwardable"
 require "espago/router"
 require "espago/error"
 require "espago/response"
-require "facets/kernel/require_all"
 
-require "espago/api_connection/api"
-require "espago/api_connection/api_delete"
-require "espago/api_connection/api_get"
-require "espago/api_connection/api_post"
-require "espago/api_connection/api_put"
-
-begin
-  require_all "error/*"
-  require_all "api_connection/*"
-rescue LoadError #if "require_all" method isn't from kernel gem
-  require_rel "error/*"
-  require_rel "api_connection/*"
-end
+::Dir[::File.expand_path('error/*.rb', __dir__)].each { require _1 }
+::Dir[::File.expand_path('api_connection/*.rb', __dir__)].each { require _1 }
 
 module Espago
   class ApiConnection
