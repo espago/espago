@@ -1,7 +1,7 @@
 Espago gem
 ======
 
-[![Build Status](https://travis-ci.org/espago/espago.png?branch=master)](https://travis-ci.org/espago/espago)
+[![CI Ruby](https://github.com/espago/espago/actions/workflows/ci.yml/badge.svg)](https://github.com/espago/espago/actions/workflows/ci.yml)
 [![Gem Version](https://badge.fury.io/rb/espago.svg)](http://badge.fury.io/rb/espago)
 
 ### Installing Espago gem
